@@ -1,6 +1,6 @@
 # Falaqui - Open Source Chat Application
 
-![Falaqui Logo](https://i.imghippo.com/files/xXE4574NQM.png "Falaqui Logo")
+<img src="https://i.imghippo.com/files/xXE4574NQM.png" alt="Falaqui Logo" width="200" />
 
 **Falaqui** is a simple, private, and secure chat application designed for both personal and business use. With end-to-end encryption, offline message access, and support for text, media, audio transcripts, and more, Falaqui aims to be an open-source alternative to popular chat apps like WhatsApp and Telegram.
 
