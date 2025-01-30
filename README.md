@@ -44,13 +44,9 @@ The motivation behind Falaqui is to provide a transparent and secure alternative
 |-------------|-------------|------------------------|
 | ![Home Screen](https://i.imghippo.com/files/uAl3835KeM.png "Home Screen") | ![Chat Screen](https://i.imghippo.com/files/GH7747idQ.png "Chat Screen") | ![Chat Screen with Media](https://i.imghippo.com/files/rDaK2088apc.png "Chat Screen with Media") |
 
-| Home Screen with Notification | Group Create/Edit Screen | Company Setup Screen |
-|-------------------------------|--------------------------|----------------------|
-| ![Home Screen with Notification](https://i.imghippo.com/files/miV1491LM.png "Home Screen with Notification") | ![Group Create/Edit Screen](https://i.imghippo.com/files/UJYV6583SBY.png "Group Create/Edit Screen") | ![Company Setup Screen](https://i.imghippo.com/files/Ztz6424yM.png "Company Setup Screen") |
-
-| Account Settings Screen |
-|-------------------------|
-| ![Account Settings Screen](https://i.imghippo.com/files/KeT5358Zoo.png "Account Settings Screen") |
+| Home Screen with Notification | Group Create/Edit Screen | Company Setup Screen | Account Settings Screen |
+|-------------------------------|--------------------------|----------------------|-------------------------|
+| ![Home Screen with Notification](https://i.imghippo.com/files/miV1491LM.png "Home Screen with Notification") | ![Group Create/Edit Screen](https://i.imghippo.com/files/UJYV6583SBY.png "Group Create/Edit Screen") | ![Company Setup Screen](https://i.imghippo.com/files/Ztz6424yM.png "Company Setup Screen") | ![Account Settings Screen](https://i.imghippo.com/files/KeT5358Zoo.png "Account Settings Screen") |
 
 ## Tech Stack
 
