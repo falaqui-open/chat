@@ -4,6 +4,8 @@
 
 **Falaqui** é um aplicativo de chat simples, privado e seguro, projetado para uso pessoal e corporativo. Com criptografia de ponta a ponta, acesso a mensagens offline e suporte para texto, mídia, transcrições de áudio e muito mais, o Falaqui pretende ser uma alternativa de código aberto a aplicativos de chat populares como WhatsApp e Telegram.
 
+*This article can also be read in [English](README.md).*
+
 ## Índice
 - [Sobre](#sobre)
 - [Recursos](#recursos)
