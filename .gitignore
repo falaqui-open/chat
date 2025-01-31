@@ -1,0 +1,222 @@
+# Application
+session-store/
+app_build_ios/
+app_build_android/
+app_build_browser/
+app_build_electron/
+app_build/
+local_modules/media/*.png
+local_modules/upload/*.*
+local_modules/upload/filestorage
+local_modules/upload/db-phone-backup
+local_modules/upload-app-backup/*.*
+local_modules/download-app-backup/*.*
+local_modules/upload-receipt/*.*
+public/apks/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+out
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
+
+# vuepress build output
+.vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+cdv-plugins/internal-alliances/whispercpp/*.o
+cdv-plugins/internal-alliances/whispercpp/*.a
+cdv-plugins/internal-alliances/whispercpp/.cache/
+cdv-plugins/internal-alliances/whispercpp/.coreml/
+cdv-plugins/internal-alliances/whispercpp/.test/
+cdv-plugins/internal-alliances/whispercpp/.vs/
+cdv-plugins/internal-alliances/whispercpp/.vscode/
+cdv-plugins/internal-alliances/whispercpp/.DS_Store
+cdv-plugins/internal-alliances/whispercpp/.vimspector.json
+cdv-plugins/internal-alliances/whispercpp/CMakeSettings.json
+
+cdv-plugins/internal-alliances/whispercpp/build/
+cdv-plugins/internal-alliances/whispercpp/build-*/
+cdv-plugins/internal-alliances/whispercpp/ggml/build/
+cdv-plugins/internal-alliances/whispercpp/ggml/build-*/
+
+# SPM
+cdv-plugins/internal-alliances/whispercpp/.build/
+cdv-plugins/internal-alliances/whispercpp/.swiftpm
+cdv-plugins/internal-alliances/whispercpp/*.metallib
+
+cdv-plugins/internal-alliances/whispercpp/main
+cdv-plugins/internal-alliances/whispercpp/stream
+cdv-plugins/internal-alliances/whispercpp/command
+cdv-plugins/internal-alliances/whispercpp/talk
+cdv-plugins/internal-alliances/whispercpp/talk-llama
+cdv-plugins/internal-alliances/whispercpp/bench
+cdv-plugins/internal-alliances/whispercpp/quantize
+cdv-plugins/internal-alliances/whispercpp/server
+cdv-plugins/internal-alliances/whispercpp/lsp
+
+cdv-plugins/internal-alliances/whispercpp/arm_neon.h
+cdv-plugins/internal-alliances/whispercpp/sync.sh
+cdv-plugins/internal-alliances/whispercpp/libwhisper.a
+cdv-plugins/internal-alliances/whispercpp/libwhisper.so
+cdv-plugins/internal-alliances/whispercpp/compile_commands.json
+
+cdv-plugins/internal-alliances/whispercpp/examples/arm_neon.h
+cdv-plugins/internal-alliances/whispercpp/examples/whisper.objc/whisper.objc.xcodeproj/xcshareddata
+cdv-plugins/internal-alliances/whispercpp/examples/whisper.objc/whisper.objc.xcodeproj/xcuserdata/
+cdv-plugins/internal-alliances/whispercpp/examples/whisper.objc/whisper.objc.xcodeproj/project.xcworkspace/xcuserdata
+
+cdv-plugins/internal-alliances/whispercpp/extra/bench-gg.txt
+
+cdv-plugins/internal-alliances/whispercpp/models/*.mlmodel
+cdv-plugins/internal-alliances/whispercpp/models/*.mlmodelc
+cdv-plugins/internal-alliances/whispercpp/models/*.mlpackage
+cdv-plugins/internal-alliances/whispercpp/bindings/java/.gradle/
+cdv-plugins/internal-alliances/whispercpp/bindings/java/.idea/
+cdv-plugins/internal-alliances/whispercpp/.idea/
+
+cdv-plugins/internal-alliances/whispercpp/benchmark_results.csv
+cdv-plugins/internal-alliances/whispercpp/cmake-build-debug/
+cdv-plugins/internal-alliances/whispercpp/.cxx/
+cdv-plugins/internal-alliances/whispercpp/.gradle/
+cdv-plugins/internal-alliances/whispercpp/local.properties

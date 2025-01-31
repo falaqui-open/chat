@@ -1,0 +1,37 @@
+{
+    "name": "chat",
+    "version": "1.0.0",
+    "description": "Falaqui Chat Community Edition (open source)",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/falaqui-open/chat.git"
+    },
+    "keywords": [
+        "falaqui",
+        "open",
+        "chat",
+        "message",
+        "messaging",
+        "instant",
+        "whatsapp",
+        "telegram",
+        "messenger",
+        "p2p",
+        "encrypted",
+        "private",
+        "corporate"
+    ],
+    "author": "Falaqui",
+    "license": "AGPL-3.0",
+    "bugs": {
+        "url": "https://github.com/falaqui-open/chat/issues"
+    },
+    "homepage": "https://github.com/falaqui-open/chat#readme",
+    "dependencies": {
+        "dotenv": "^16.4.7"
+    }
+}
