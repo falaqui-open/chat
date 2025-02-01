@@ -117,6 +117,12 @@ However, any modifications or distributions must also be licensed under the AGPL
 - **Google Play**: [Get it on Google Play](https://play.google.com/store/apps/details?id=com.br.falaqui)
 - **Samsung Galaxy**: [Download on Samsung Galaxy Store](https://galaxystore.samsung.com/detail/com.br.falaqui)
 
+## Official WebSites
+
+- **Main: Portuguese (pt-BR)**: [Visit](https://FalaQui.com.br)
+- **English Version**: [Visit](https://FalaQui.com)
+- **Org Version (pt-BR)**: [Visit](https://FalaQui.org)
+
 ---
 
 **Falaqui** - Your private, secure, and open-source chat solution.
