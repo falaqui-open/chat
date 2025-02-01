@@ -117,6 +117,12 @@ No entanto, quaisquer modificações ou distribuições também devem ser licenc
 - **Google Play**: [Disponível no Google Play](https://play.google.com/store/apps/details?id=com.br.falaqui)
 - **Samsung Galaxy**: [Baixe na Samsung Galaxy Store](https://galaxystore.samsung.com/detail/com.br.falaqui)
 
+## WebSites Oficiais
+
+- **Principal: Português (pt-BR)**: [Visit](https://FalaQui.com.br)
+- **Versão em Inglês**: [Visit](https://FalaQui.com)
+- **Versão Org (pt-BR)**: [Visit](https://FalaQui.org)
+
 ---
 
 **Falaqui** - Sua solução de chat privada, segura e de código aberto.
