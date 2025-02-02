@@ -1,0 +1,130 @@
+[
+    {
+        "country": "GB",
+        "language": "en-GB"
+    },
+    {
+        "country": "US",
+        "language": "en-US"
+    },
+    {
+        "country": "BR",
+        "language": "pt-BR"
+    },
+    {
+        "country": "TH",
+        "language": "th-TH"
+    },
+    {
+        "country": "ID",
+        "language": "id-ID"
+    },
+    {
+        "country": "PH",
+        "language": "tl-PH"
+    },
+    {
+        "country": "VN",
+        "language": "vi-VN"
+    },
+    {
+        "country": "IT",
+        "language": "it-IT"
+    },
+    {
+        "country": "MY",
+        "language": "ms-MY"
+    },
+    {
+        "country": "KR",
+        "language": "ko-KR"
+    },
+    {
+        "country": "CN",
+        "language": "zh-CN"
+    },
+    {
+        "country": "ES",
+        "language": "es-ES"
+    },
+    {
+        "country": "DZ",
+        "language": "ar-DZ"
+    },
+    {
+        "country": "BH",
+        "language": "ar-BH"
+    },
+    {
+        "country": "EG",
+        "language": "ar-EG"
+    },
+    {
+        "country": "IQ",
+        "language": "ar-IQ"
+    },
+    {
+        "country": "JO",
+        "language": "ar-JO"
+    },
+    {
+        "country": "KW",
+        "language": "ar-KW"
+    },
+    {
+        "country": "LB",
+        "language": "ar-LB"
+    },
+    {
+        "country": "MR",
+        "language": "ar-MR"
+    },
+    {
+        "country": "MA",
+        "language": "ar-MA"
+    },
+    {
+        "country": "QA",
+        "language": "ar-QA"
+    },
+    {
+        "country": "SA",
+        "language": "ar-SA"
+    },
+    {
+        "country": "SO",
+        "language": "ar-SO"
+    },
+    {
+        "country": "SD",
+        "language": "ar-SD"
+    },
+    {
+        "country": "TN",
+        "language": "ar-TN"
+    },
+    {
+        "country": "AE",
+        "language": "ar-AE"
+    },
+    {
+        "country": "FR",
+        "language": "fr-FR"
+    },
+    {
+        "country": "RU",
+        "language": "ru-RU"
+    },
+    {
+        "country": "DE",
+        "language": "de-DE"
+    },
+    {
+        "country": "IN",
+        "language": "hi-IN"
+    },
+    {
+        "country": "JP",
+        "language": "ja-JP"
+    }
+]

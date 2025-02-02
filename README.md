@@ -89,6 +89,16 @@ This section is currently under construction. Please check back later for detail
 - Redis
 - Firebase Cloud Messaging
 
+#### Server Setup Requirements
+
+| Platform             | Instructions                                   |
+|----------------------|-----------------------------------------------|
+| **Linux Ubuntu**     | [Linux Ubuntu Requirements Setup Guide](docs/platforms/linux-ubuntu/requirements/README.md) |
+| **MacOS Apple Silicon** | *Coming soon...*                             |
+| **Windows**          | *Coming soon...*                             |
+
+*Note: These instructions can be adapted to platforms other than those listed above.*
+
 #### Instructions
 Coming soon...
 

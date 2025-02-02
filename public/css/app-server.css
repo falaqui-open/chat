@@ -1,4 +1,3 @@
-/* Fancy Dark Background Page  */
 body{
     background-color: #1a1a1a;
     color: #fff;
@@ -10,6 +9,15 @@ body{
     text-align: center;
 }
 
+.home-server-logo{
+    width: 48px;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 12px;
+    margin-right: 5px;
+}
+
 .home-server-indicator{
     text-align: center;
+    font-size: 10pt;
 }

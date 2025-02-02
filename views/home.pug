@@ -1,5 +1,7 @@
 extends i_layout
 
 block content
-    h1(class="home-server-title")= pagetitle
+    h1(class="home-server-title")
+        img(src="/images/logo128.png", alt="FalaQui Logo", class="home-server-logo")
+        span= pagetitle
     div(class="home-server-indicator") 🟢 Online

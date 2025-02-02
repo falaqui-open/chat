@@ -1,0 +1,16 @@
+{
+    "apps" : [{
+        "name"   : "flq-server",
+        "script" : "./server.js",
+        "args": "flq",
+        "node_args": ["--max-old-space-size=1800"],
+        "env_production": {
+            "NODE_ENV": "production",
+            "LANG": "C.UTF-8",
+            "LC_ALL": "C.UTF-8"
+        },
+        "env_development": {
+            "NODE_ENV": "development"
+        }
+    }]
+}

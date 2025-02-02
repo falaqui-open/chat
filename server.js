@@ -15,6 +15,7 @@ const port              = parseInt(process.env.PORT);
 const wssPort           = parseInt(process.env.WSSPORT);
 
 console.log(`🟡 Initializing local packages...`);
+const helper            = require('./local_modules/helper');
 const language          = require('./local_modules/language');
 const security          = require('./local_modules/security');
 const cache             = require('./local_modules/cache');
@@ -81,22 +82,8 @@ app.use(express.json());
 /**
  * Session storage
  */
-const sessionSecret = process.env.SESSION_SECRET;
-var sess = {
-    secret: sessionSecret,
-    resave: false,
-    saveUninitialized: false,
-    cookie: { 
-        secure: false //,
-        //maxAge: (1000*60*60*24*7) // 7 days: Time is in miliseconds
-    },
-    store: new FileStore({
-         path: './session-store',
-         logFn: function(){} //supress warning messages from session filestore
-    })
-}
-
-app.use(session(sess));
+const sessionConfig = helper.getServerSessionConfig(session);
+app.use(session(sessionConfig));
 
 
 
@@ -126,24 +113,36 @@ Set the index route (path: /)
 const rtIndex = require('./routes/index');
 app.use('/', rtIndex);
 
+
+/*
+Set the services route (path: /services)
+*/
+const rtServices = require('./routes/services');
+app.use('/', rtServices);
+
+
+
 console.log(`🟡 Starting server...`);
 app.listen(port, () => {
     const pm2NodeEnv = typeof process.env.NODE_ENV != `undefined` ? process.env.NODE_ENV : `No PM2 runtime`;
     console.log(`🟢 Listening Server on port ${port}. Socket on port ${wssPort} | PM2 Node Env: "${pm2NodeEnv}"`);
 
-    afterStart();
+    afterServerStart();
 });
 
-async function afterStart()
+async function afterServerStart()
 {
     console.log(`🚩 After server start processing...`);
 
     // On server finish actions
     process.on("exit", async function(){
+        console.log(`🔴 Exit signal received!`);
+
         await cache.disconnect();
     });
 
     process.on('SIGINT', async function() {
+        console.log(`🔴 Sigint signal received!`);
         await cache.disconnect();
         
         process.exit();
