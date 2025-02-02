@@ -1,6 +1,6 @@
 # Falaqui - Aplicativo de Chat de Código Aberto
 
-<img src="https://i.imghippo.com/files/Kl7316SO.png" alt="Banner do Falaqui" />
+<img src="docs/img/falaqui-open-banner.png" alt="Banner do Falaqui" />
 
 **Falaqui** é um aplicativo de chat simples, privado e seguro, projetado para uso pessoal e corporativo. Com criptografia de ponta a ponta, acesso a mensagens offline e suporte para texto, mídia, transcrições de áudio e muito mais, o Falaqui pretende ser uma alternativa de código aberto a aplicativos de chat populares como WhatsApp e Telegram.
 
@@ -17,7 +17,7 @@
 
 ## Sobre
 
-<img src="https://i.imghippo.com/files/xXE4574NQM.png" alt="Logo do Falaqui" width="200" />
+<img src="docs/img/falaqui-open-icon.png" alt="Logo do Falaqui" width="200" />
 O Falaqui é um aplicativo de chat de código aberto que prioriza a privacidade e a segurança. Ele permite que os usuários enviem mensagens, compartilhem arquivos e se comuniquem em grupos com criptografia de ponta a ponta. Quer você esteja conversando com amigos, familiares ou colegas de trabalho, o Falaqui garante que suas conversas permaneçam privadas e seguras.
 
 ### Motivação
@@ -41,15 +41,15 @@ A motivação por trás do Falaqui é fornecer uma alternativa transparente e se
 
 | Tela Inicial | Tela de Login | Login com Número de Telefone Localizado |
 |--------------|--------------|-----------------------------------------|
-| ![Tela Inicial](https://i.imghippo.com/files/ki3556f.png "Tela Inicial") | ![Tela de Login](https://i.imghippo.com/files/pCK7015Ghg.png "Tela de Login") | ![Login com Número de Telefone Localizado](https://i.imghippo.com/files/QP4314DAk.png "Login com Número de Telefone Localizado") |
+| ![Tela Inicial](docs/img/falaqui-open-splash.png "Tela Inicial") | ![Tela de Login](docs/img/falaqui-open-login.png "Tela de Login") | ![Login com Número de Telefone Localizado](docs/img/falaqui-open-login-w-local-phone.png "Login com Número de Telefone Localizado") |
 
 | Tela Principal | Tela de Chat | Tela de Chat com Mídia |
 |----------------|--------------|------------------------|
-| ![Tela Principal](https://i.imghippo.com/files/uAl3835KeM.png "Tela Principal") | ![Tela de Chat](https://i.imghippo.com/files/GH7747idQ.png "Tela de Chat") | ![Tela de Chat com Mídia](https://i.imghippo.com/files/rDaK2088apc.png "Tela de Chat com Mídia") |
+| ![Tela Principal](docs/img/falaqui-open-home.png "Tela Principal") | ![Tela de Chat](docs/img/falaqui-open-chat.png "Tela de Chat") | ![Tela de Chat com Mídia](docs/img/falaqui-open-chat-w-media.png "Tela de Chat com Mídia") |
 
 | Tela Principal com Notificação | Tela de Criação/Edição de Grupo | Tela de Configuração da Empresa | Tela de Configurações da Conta |
 |--------------------------------|--------------------------------|--------------------------------|--------------------------------|
-| ![Tela Principal com Notificação](https://i.imghippo.com/files/miV1491LM.png "Tela Principal com Notificação") | ![Tela de Criação/Edição de Grupo](https://i.imghippo.com/files/UJYV6583SBY.png "Tela de Criação/Edição de Grupo") | ![Tela de Configuração da Empresa](https://i.imghippo.com/files/Ztz6424yM.png "Tela de Configuração da Empresa") | ![Tela de Configurações da Conta](https://i.imghippo.com/files/KeT5358Zoo.png "Tela de Configurações da Conta") |
+| ![Tela Principal com Notificação](docs/img/falaqui-open-home-w-notification.png "Tela Principal com Notificação") | ![Tela de Criação/Edição de Grupo](docs/img/falaqui-open-group-create-edit.png "Tela de Criação/Edição de Grupo") | ![Tela de Configuração da Empresa](docs/img/falaqui-open-company.png "Tela de Configuração da Empresa") | ![Tela de Configurações da Conta](docs/img/falaqui-open-account.png "Tela de Configurações da Conta") |
 
 ## Tecnologias Utilizadas
 

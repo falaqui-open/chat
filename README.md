@@ -1,6 +1,6 @@
 # Falaqui - Open Source Chat Application
 
-<img src="https://i.imghippo.com/files/Kl7316SO.png" alt="Falaqui Banner" />
+<img src="docs/img/falaqui-open-banner.png" alt="Falaqui Banner" />
 
 **Falaqui** is a simple, private, and secure chat application designed for both personal and business use. With end-to-end encryption, offline message access, and support for text, media, audio transcripts, and more, Falaqui aims to be an open-source alternative to popular chat apps like WhatsApp and Telegram.
 
@@ -17,7 +17,7 @@
 
 ## About
 
-<img src="https://i.imghippo.com/files/xXE4574NQM.png" alt="Falaqui Logo" width="200" />
+<img src="docs/img/falaqui-open-icon.png" alt="Falaqui Logo" width="200" />
 Falaqui is an open-source chat application that prioritizes privacy and security. It allows users to send messages, share files, and communicate in groups with end-to-end encryption. Whether you're chatting with friends, family, or coworkers, Falaqui ensures your conversations remain private and secure.
 
 ### Motivation
@@ -41,15 +41,15 @@ The motivation behind Falaqui is to provide a transparent and secure alternative
 
 | Splashscreen | Login Screen | Login with Localized Phone Number |
 |--------------|--------------|-----------------------------------|
-| ![Splashscreen](https://i.imghippo.com/files/ki3556f.png "Splashscreen") | ![Login Screen](https://i.imghippo.com/files/pCK7015Ghg.png "Login Screen") | ![Login with Localized Phone Number](https://i.imghippo.com/files/QP4314DAk.png "Login with Localized Phone Number") |
+| ![Splashscreen](docs/img/falaqui-open-splash.png "Splashscreen") | ![Login Screen](docs/img/falaqui-open-login.png "Login Screen") | ![Login with Localized Phone Number](docs/img/falaqui-open-login-w-local-phone.png "Login with Localized Phone Number") |
 
 | Home Screen | Chat Screen | Chat Screen with Media |
 |-------------|-------------|------------------------|
-| ![Home Screen](https://i.imghippo.com/files/uAl3835KeM.png "Home Screen") | ![Chat Screen](https://i.imghippo.com/files/GH7747idQ.png "Chat Screen") | ![Chat Screen with Media](https://i.imghippo.com/files/rDaK2088apc.png "Chat Screen with Media") |
+| ![Home Screen](docs/img/falaqui-open-home.png "Home Screen") | ![Chat Screen](docs/img/falaqui-open-chat.png "Chat Screen") | ![Chat Screen with Media](docs/img/falaqui-open-chat-w-media.png "Chat Screen with Media") |
 
 | Home Screen with Notification | Group Create/Edit Screen | Company Setup Screen | Account Settings Screen |
 |-------------------------------|--------------------------|----------------------|-------------------------|
-| ![Home Screen with Notification](https://i.imghippo.com/files/miV1491LM.png "Home Screen with Notification") | ![Group Create/Edit Screen](https://i.imghippo.com/files/UJYV6583SBY.png "Group Create/Edit Screen") | ![Company Setup Screen](https://i.imghippo.com/files/Ztz6424yM.png "Company Setup Screen") | ![Account Settings Screen](https://i.imghippo.com/files/KeT5358Zoo.png "Account Settings Screen") |
+| ![Home Screen with Notification](docs/img/falaqui-open-home-w-notification.png "Home Screen with Notification") | ![Group Create/Edit Screen](docs/img/falaqui-open-group-create-edit.png "Group Create/Edit Screen") | ![Company Setup Screen](docs/img/falaqui-open-company.png "Company Setup Screen") | ![Account Settings Screen](docs/img/falaqui-open-account.png "Account Settings Screen") |
 
 ## Tech Stack
 
