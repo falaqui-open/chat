@@ -116,11 +116,42 @@ app.use(security.clientInfoMiddleware);
 /*
 Set a server public directory for static files
 */
-const publicDir   = __dirname + '/public'
+const publicDir = __dirname + '/public'
 app.use(express.static(publicDir));
 
 
-console.log(`🟡 Starting server...`);
-// ... TODO
+/*
+Set the index route (path: /)
+*/
+const rtIndex = require('./routes/index');
+app.use('/', rtIndex);
 
-console.log(`🟢 Listening Server on port ${port}. Socket on port ${wssPort}`);
+console.log(`🟡 Starting server...`);
+app.listen(port, () => {
+    const pm2NodeEnv = typeof process.env.NODE_ENV != `undefined` ? process.env.NODE_ENV : `No PM2 runtime`;
+    console.log(`🟢 Listening Server on port ${port}. Socket on port ${wssPort} | PM2 Node Env: "${pm2NodeEnv}"`);
+
+    afterStart();
+});
+
+async function afterStart()
+{
+    console.log(`🚩 After server start processing...`);
+
+    // On server finish actions
+    process.on("exit", async function(){
+        await cache.disconnect();
+    });
+
+    process.on('SIGINT', async function() {
+        await cache.disconnect();
+        
+        process.exit();
+    });
+
+    // Redis connection initialize
+    cache.init();
+
+
+    console.log(`🏁 After server start processed!`);
+}

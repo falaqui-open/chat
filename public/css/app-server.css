@@ -1,0 +1,15 @@
+/* Fancy Dark Background Page  */
+body{
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.home-server-title{
+    font-size: 22pt;
+    padding: 10px 0 0 0;
+    text-align: center;
+}
+
+.home-server-indicator{
+    text-align: center;
+}

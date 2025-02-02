@@ -1,0 +1,48 @@
+doctype html
+html
+    head
+        //- Favicon For iPhone
+        meta(name="msapplication-TileColor", content="#CF240A")
+        meta(name="msapplication-TileImage", content="images/logo512.png")
+
+        meta(name='viewport', content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="msapplication-tap-highlight", content="no")
+        meta(http-equiv="content-language", content="en")
+
+        meta(name="apple-mobile-web-app-capable", content="no")
+        meta(name="mobile-web-app-capable", content="no")
+        meta(name="description", content="FalaQui Server")
+        meta(name="keywords", content="falaqui,chat,app,social")
+        meta(name="robots", content="index, follow")
+        meta(name="googlebot", content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")
+        meta(name="bingbot", content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1")
+
+        //- Materialize
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css")
+
+        //- Favicon
+        link(rel="icon", href="images/logo128.png")
+        link(rel="apple-touch-icon-precomposed", href="images/logo512.png")
+
+        //- App
+        link(rel="stylesheet", href="css/app-server.css")
+
+        script(src="https://code.jquery.com/jquery-3.7.1.min.js")
+
+        title= pagetitle
+    body
+        block content
+
+        //- Materialize
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+
+        //- SweetAlert
+        script(src="https://unpkg.com/sweetalert/dist/sweetalert.min.js")
+
+        //- App
+        script(type="text/javascript", src="js/app-server.js")
