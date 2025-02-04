@@ -95,7 +95,7 @@ Esta seção está atualmente em construção. Por favor, volte mais tarde para 
 |------------------------|---------------------------------------------|
 | **Linux Ubuntu**       | [Guia de Configuração de Requisitos do Linux Ubuntu (em inglês)](docs/platforms/linux-ubuntu/requirements/README.md) |
 | **MacOS Apple Silicon** | [Guia de Configuração de Requisitos do MacOS (em inglês)](docs/platforms/mac/requirements/README.md) |
-| **Windows**            | [Guia de Configuração de Requisitos do MacOS (em inglês)](docs/platforms/win/requirements/README.md) |
+| **Windows**            | [Guia de Configuração de Requisitos do Windows (em inglês)](docs/platforms/win/requirements/README.md) |
 
 *Observação: Essas instruções podem ser adaptadas para outras plataformas além das listadas acima.*
 
