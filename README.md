@@ -95,7 +95,7 @@ This section is currently under construction. Please check back later for detail
 |----------------------|-----------------------------------------------|
 | **Linux Ubuntu**     | [Linux Ubuntu Requirements Setup Guide](docs/platforms/linux-ubuntu/requirements/README.md) |
 | **MacOS Apple Silicon** | [MacOS Requirements Setup Guide](docs/platforms/mac/requirements/README.md) |
-| **Windows**          | *Coming soon...*                             |
+| **Windows**          | [Windows Requirements Setup Guide](docs/platforms/win/requirements/README.md) |
 
 *Note: These instructions can be adapted to platforms other than those listed above.*
 
