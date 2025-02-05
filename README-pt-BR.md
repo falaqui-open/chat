@@ -13,7 +13,6 @@
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
 - [Licença](#licença)
-- [Agradecimentos](#agradecimentos)
 
 ## Sobre
 
@@ -83,7 +82,7 @@ A motivação por trás do Falaqui é fornecer uma alternativa transparente e se
 
 Esta seção está atualmente em construção. Por favor, volte mais tarde para obter instruções detalhadas sobre como configurar e executar o Falaqui localmente.
 
-#### Requisitos
+#### 1. Requisitos
 
 É necessário um conjunto de instalação e configuração, tais como:
 - Node.JS
@@ -95,7 +94,7 @@ Esta seção está atualmente em construção. Por favor, volte mais tarde para 
 
 Siga a seguir as instruções para começar a configurar o seu ambiente.
 
-##### 1. Requisitos de Configuração do Servidor
+##### Requisitos de Configuração do Servidor
 
 Escolha a plataforma no qual deseja montar seu ambiente e siga as instruções conforme o link relacionado.
 
@@ -107,16 +106,16 @@ Escolha a plataforma no qual deseja montar seu ambiente e siga as instruções c
 
 *Observação: Essas instruções podem ser adaptadas para outras plataformas além das listadas acima.*
 
-##### 2. Configuração do Servidor
+#### 2. Configuração do Servidor
 Faça o download ou clone a versão mais recente do código.
 
-###### 2.1 Inicialização do Servidor de Desenvolvimento
+##### 2.1 Inicialização do Servidor de Desenvolvimento
 Para fins de desenvolvimento, você pode simplesmente executar:
 ```bash
 node server.js
 ```
 
-###### 2.2 Inicialização do Servidor de Produção (Daemon)
+##### 2.2 Inicialização do Servidor de Produção (Daemon)
 Para executar o servidor em segundo plano (daemon) com NODE_ENV em "modo de produção", use o comando PM2:
 ```bash
 pm2 start start-flq-server-ecosystem.json --env production
@@ -131,10 +130,10 @@ Para facilitar os usuários de MacOS e Linux, há o script shell start-flq-serve
 Para saber mais sobre o PM2 e seus comandos, consulte a documentação do PM2 em https://pm2.keymetrics.io/docs/usage/process-management.
 
 
-#### Requisitos para a Construção do App para Telefone
+### Requisitos para a Construção do App para Telefone
 Em breve...
 
-#### Construção do App para Telefone
+### Construção do App para Telefone
 Em breve...
 
 ## Licença
