@@ -124,6 +124,11 @@ Alternatively, you can download and install MySQL Community Server from the offi
 4. Follow the steps in the installation wizard.
 5. When the installer finishes, eject the DMG. (It can be deleted.)
 
+Use the initial.sql script to create the database and tables on your MySQL server.
+| Creation Database Script                                                                |
+|-----------------------------------------------------------------------------------------|
+| [initial.sql](https://github.com/falaqui-open/chat/blob/main/docs/database/initial.sql) |
+
 ---
 
 ### Python Package Installer

@@ -92,6 +92,11 @@ sudo apt install mysql-server
 sudo systemctl start mysql.service
 ```
 
+Use the initial.sql script to create the database and tables on your MySQL server.
+| Creation Database Script                                                                |
+|-----------------------------------------------------------------------------------------|
+| [initial.sql](https://github.com/falaqui-open/chat/blob/main/docs/database/initial.sql) |
+
 ---
 
 ### Python Package Installer

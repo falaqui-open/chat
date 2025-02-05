@@ -84,12 +84,20 @@ The motivation behind Falaqui is to provide a transparent and secure alternative
 This section is currently under construction. Please check back later for detailed instructions on how to set up and run Falaqui locally.
 
 #### Requirements
+
+A set of installation and configuration is required, such as:
 - Node.JS
 - MySQL Server
 - Redis
 - Firebase Cloud Messaging
+- C/C++ Build Environment
+- \+ a set of support packages
 
-#### Server Setup Requirements
+Follow the instructions below to start setting up your environment.
+
+##### 1. Server Setup Requirements
+
+Choose the platform on which you want to set up your environment and follow the instructions as per the related link.
 
 | Platform             | Instructions                                   |
 |----------------------|-----------------------------------------------|
@@ -99,11 +107,35 @@ This section is currently under construction. Please check back later for detail
 
 *Note: These instructions can be adapted to platforms other than those listed above.*
 
-#### Instructions
+##### 2. Server Setup
+Download or clone the latest version of the code.
+
+###### 2.1 Development Server Start
+For development purposes you may just run:
+```bash
+node server.js
+```
+
+###### 2.2 Production Server Start (Daemon)
+To run the server in background (daemon) with NODE_ENV in "production mode", use the PM2 command:
+```bash
+pm2 start start-flq-server-ecosystem.json --env production
+```
+*Note: The ecosystem file start-flq-server-ecosystem.json contains the environment configuration for production.*
+
+To facilitate MacOS and Linux users there are the shell script start-flq-server.sh that can be used to start the process.
+```bash
+./start-flq-server.sh
+```
+
+To know more about PM2 and its commands, please check the PM2 documentation at https://pm2.keymetrics.io/docs/usage/process-management.
+
+
+#### Mobile App Build Requirements
 Coming soon...
 
-#### Note
-Important information for setting up the application on your local machine will be provided here.
+#### Mobile App Build
+Coming soon...
 
 ## License
 

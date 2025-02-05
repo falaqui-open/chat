@@ -84,12 +84,20 @@ A motivação por trás do Falaqui é fornecer uma alternativa transparente e se
 Esta seção está atualmente em construção. Por favor, volte mais tarde para obter instruções detalhadas sobre como configurar e executar o Falaqui localmente.
 
 #### Requisitos
+
+É necessário um conjunto de instalação e configuração, tais como:
 - Node.JS
 - Servidor MySQL
 - Redis
 - Firebase Cloud Messaging
+- C/C++ Build Environment
+- \+ um conjunto de pacotes de apoio
 
-#### Requisitos de Configuração do Servidor
+Siga a seguir as instruções para começar a configurar o seu ambiente.
+
+##### 1. Requisitos de Configuração do Servidor
+
+Escolha a plataforma no qual deseja montar seu ambiente e siga as instruções conforme o link relacionado.
 
 | Plataforma             | Instruções                                   |
 |------------------------|---------------------------------------------|
@@ -99,11 +107,35 @@ Esta seção está atualmente em construção. Por favor, volte mais tarde para 
 
 *Observação: Essas instruções podem ser adaptadas para outras plataformas além das listadas acima.*
 
-#### Instruções
+##### 2. Configuração do Servidor
+Faça o download ou clone a versão mais recente do código.
+
+###### 2.1 Inicialização do Servidor de Desenvolvimento
+Para fins de desenvolvimento, você pode simplesmente executar:
+```bash
+node server.js
+```
+
+###### 2.2 Inicialização do Servidor de Produção (Daemon)
+Para executar o servidor em segundo plano (daemon) com NODE_ENV em "modo de produção", use o comando PM2:
+```bash
+pm2 start start-flq-server-ecosystem.json --env production
+```
+*Nota: O arquivo de ecossistema start-flq-server-ecosystem.json contém a configuração do ambiente para produção.*
+
+Para facilitar os usuários de MacOS e Linux, há o script shell start-flq-server.sh que pode ser usado para iniciar o processo.
+```bash
+./start-flq-server.sh
+```
+
+Para saber mais sobre o PM2 e seus comandos, consulte a documentação do PM2 em https://pm2.keymetrics.io/docs/usage/process-management.
+
+
+#### Requisitos para a Construção do App para Telefone
 Em breve...
 
-#### Nota
-Informações importantes para configurar o aplicativo em sua máquina local serão fornecidas aqui.
+#### Construção do App para Telefone
+Em breve...
 
 ## Licença
 
