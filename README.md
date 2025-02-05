@@ -146,13 +146,6 @@ Falaqui is licensed under the **AGPL-3.0 License**. This license allows you to:
 
 However, any modifications or distributions must also be licensed under the AGPL-3.0 License, and the source code must be made available to users.
 
-## Acknowledgments
-
-- **Node.JS** and **Express** for the backend server.
-- **Whisper** for audio transcription.
-- **Apache Cordova** for the frontend app.
-- **Firebase Cloud Messaging** for push notifications.
-
 ## Official App Stores
 
 - **Apple Store**: [Download on the App Store](https://apps.apple.com/us/app/falaqui/id6503642039)

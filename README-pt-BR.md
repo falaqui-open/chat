@@ -146,13 +146,6 @@ O Falaqui é licenciado sob a **Licença AGPL-3.0**. Esta licença permite que v
 
 No entanto, quaisquer modificações ou distribuições também devem ser licenciadas sob a Licença AGPL-3.0, e o código-fonte deve ser disponibilizado aos usuários.
 
-## Agradecimentos
-
-- **Node.JS** e **Express** pelo servidor backend.
-- **Whisper** pela transcrição de áudio.
-- **Apache Cordova** pelo aplicativo frontend.
-- **Firebase Cloud Messaging** pelas notificações push.
-
 ## Lojas de Aplicativos Oficiais
 
 - **Apple Store**: [Baixe na App Store](https://apps.apple.com/us/app/falaqui/id6503642039)
