@@ -176,6 +176,11 @@ pip install openai-whisper
 
 ---
 
+### Configure your .env file
+Check the .env-template file to create your own .env file.
+
+---
+
 ### Additional Notes
 - **Environment Variables**: Ensure that the paths for NodeJS, Python, and other tools are added to your system's PATH environment variable.
 - **Services**: Use `services.msc` to manage Redis and MySQL services.
