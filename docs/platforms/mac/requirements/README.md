@@ -148,6 +148,30 @@ pip3 install openai-whisper --break-system-packages
 ### Configure your .env file
 Check the .env-template file to create your own .env file.
 
+```
+PORT=24011
+WSSPORT=24012
+DB_HOST=localhost
+DB_USER=dbuser
+DB_PASSWORD=ChangeMe
+DB_NAME=flq
+DB_MULTIPLE_STATEMENTS=true
+DB_CONNECT_TIMEOUT=160000
+DB_CONNECTION_LIMIT=100
+DB_ACQUIRE_TIMEOUT=160000
+DB_WAIT_FOR_CONNECTIONS=true
+DB_QUEUE_LIMIT=0
+CONNECTION_CHARSET=utf8mb4_unicode_ci
+CACHE_PREFIX=FLQ_
+CACHE_MINUTES=120
+ENCRYPT_PASSPHRASE='generate a new unique word list'
+TOKEN_SECRET='genereate a new token secret'
+SESSION_SECRET='generate a new session secret'
+SMS_CLICKSEND_USERNAME='your-clicksend-email@email-provider.com'
+SMS_CLICKSEND_APIKEY='00000000-0000-0000-0000-000000000000'
+SMS_CLICKSEND_URL='https://rest.clicksend.com/v3/sms/send'
+```
+
 ---
 
 
