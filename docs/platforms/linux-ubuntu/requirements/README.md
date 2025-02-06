@@ -110,3 +110,9 @@ sudo apt install python3-pip
 ```bash
 pip3 install openai-whisper --break-system-packages
 ```
+
+---
+
+### Configure your .env file
+Check the .env-template file to create your own .env file.
+

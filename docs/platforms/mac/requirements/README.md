@@ -145,6 +145,12 @@ pip3 install openai-whisper --break-system-packages
 
 ---
 
+### Configure your .env file
+Check the .env-template file to create your own .env file.
+
+---
+
+
 ### Additional Notes:
 - **Homebrew**: Ensure that Homebrew is installed on the system. If not, you can add a note at the beginning of the document explaining how to install it:
   ```bash
