@@ -1,0 +1,22 @@
+{
+    "name": "internal-nativescreen",
+    "version": "1.0.0",
+    "description": "Native Screen Internal Plugin",
+    "cordova": {
+        "id": "internal-nativescreen",
+        "platforms": [
+            "ios",
+            "android",
+            "browser"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "cordova-android",
+        "cordova-ios",
+        "cordova-browser",
+        "swift"
+    ],
+    "author": "João Costa",
+    "license": "MIT"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "internal-devicelocale",
+    "version": "0.1.0",
+    "description": "Device Locale Internal Plugin",
+    "cordova": {
+        "id": "internal-devicelocale",
+        "platforms": [
+            "ios",
+            "android",
+            "browser"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "cordova-android",
+        "cordova-ios",
+        "cordova-browser",
+        "swift"
+    ],
+    "author": "João Costa",
+    "license": "MIT"
+}

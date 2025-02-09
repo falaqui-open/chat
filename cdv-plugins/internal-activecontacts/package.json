@@ -1,0 +1,20 @@
+{
+    "name": "internal-activecontacts",
+    "version": "0.1.0",
+    "description": "ActiveContacts Internal Plugin",
+    "cordova": {
+        "id": "internal-activecontacts",
+        "platforms": [
+            "ios",
+            "android"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "cordova-android",
+        "cordova-ios",
+        "swift"
+    ],
+    "author": "João Costa",
+    "license": "MIT"
+}

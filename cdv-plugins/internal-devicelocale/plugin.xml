@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="internal-locale" version="0.1.0">
+    <name>Device Locale</name>
+    <description>Device Locale Internal Plugin</description>
+    <license>Apache 2.0 License</license>
+    <keywords>cordova,sim,number</keywords>
+    <author>João Costa</author>
+
+    <!-- <engines>
+        <engine name="cordova" version=">=12.0.0" />
+        <engine name="cordova-android" version=">=12.0.0" />
+        <engine name="cordova-ios" version=">=7.0.1" />
+        <engine name="cordova-browser" version=">=7.0.0" />
+        <engine name="cordova-electron" version=">=4.0.0" />
+    </engines> -->
+
+    <js-module src="www/internal-devicelocale.js" name="internaldevicelocale">
+        <!-- window.internal.devicelocale -->
+        <clobbers target="internal.devicelocale" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceLocale" >
+                <param name="android-package" value="app.internal.DeviceLocale"/>
+                <!-- <param name="onload" value="true" /> -->
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/DeviceLocale.java" target-dir="src/app/internal" />
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceLocale">
+                <param name="ios-package" value="DeviceLocale" onload="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/DeviceLocale.swift" />
+    </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceLocale" >
+                <param name="android-package" value="app.internal.DeviceLocale"/>
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/DeviceLocaleProxy.js" name="DeviceLocaleProxy">
+            <runs />
+        </js-module>
+    </platform>
+
+</plugin>
