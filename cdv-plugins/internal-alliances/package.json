@@ -1,0 +1,22 @@
+{
+    "name": "internal-alliances",
+    "version": "0.1.0",
+    "description": "Alliances Internal Plugin",
+    "cordova": {
+        "id": "internal-alliances",
+        "platforms": [
+            "ios",
+            "android",
+            "browser"
+        ]
+    },
+    "keywords": [
+        "cordova",
+        "cordova-android",
+        "cordova-ios",
+        "cordova-browser",
+        "swift"
+    ],
+    "author": "João Costa",
+    "license": "MIT"
+}

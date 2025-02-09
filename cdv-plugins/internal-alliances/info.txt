@@ -1,0 +1,19 @@
+C Run Details: https://github.com/dpa99c/cordova-plugin-hello-c/
+
+Install NDK and CMake: https://developer.android.com/studio/projects/install-ndk
+
+Set the NDK installed version (eg. 26.3.11579264) to environment variable PATH:
+    vim ~/.zprofile
+    export ANDROID_NDK=$ANDROID_HOME/ndk/26.3.11579264
+    ...
+    export PATH=$PATH:ANDROID_NDK
+
+
+
+Compile the C code
+    cd cdv-plugins/internal-alliances/
+    ./compile-android.sh
+
+iOS does not need to compile
+
+Run the project

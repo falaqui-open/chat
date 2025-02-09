@@ -1,0 +1,24 @@
+android {
+    packagingOptions {
+        pickFirst 'app/src/main/jniLibs/arm64-v8a/libjnialliances.so'
+        pickFirst 'app/src/main/jniLibs/armeabi-v7a/libjnialliances.so'
+        pickFirst 'app/src/main/jniLibs/x86/libjnialliances.so'
+        pickFirst 'app/src/main/jniLibs/x86_64/libjnialliances.so'
+    }
+    defaultConfig {
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+        externalNativeBuild {
+            ndkBuild {
+                arguments "-j4"
+            }
+        }
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path "app/src/main/java/c/android/jni/Android.mk"
+        }
+    }
+}

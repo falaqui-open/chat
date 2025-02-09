@@ -1,0 +1,3 @@
+./obj/local/arm64-v8a/objs/jnialliancespp/__/__/common/alliancespp.o: \
+  jni/../../common/alliancespp.cpp jni/../../common/alliancespp.hpp
+jni/../../common/alliancespp.hpp:

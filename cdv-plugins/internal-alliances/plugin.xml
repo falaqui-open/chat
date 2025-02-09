@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="internal-alliances" version="1.0.0">
+    <name>Alliances</name>
+    <description>Alliances Internal Plugin</description>
+    <license>Apache 2.0 License</license>
+    <keywords>cordova,native,c</keywords>
+    <author>João Costa</author>
+
+    <!-- <engines>
+        <engine name="cordova" version=">=12.0.0" />
+        <engine name="cordova-android" version=">=12.0.0" />
+        <engine name="cordova-ios" version=">=7.0.1" />
+        <engine name="cordova-browser" version=">=7.0.0" />
+        <engine name="cordova-electron" version=">=4.0.0" />
+    </engines> -->
+
+    <js-module src="www/internal-alliances.js" name="alliances">
+        <!-- window.internal.alliances -->
+        <clobbers target="internal.alliances" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Alliances" >
+                <param name="android-package" value="app.internal.Alliances"/>
+                <!-- <param name="onload" value="true" /> -->
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Alliances.java" target-dir="src/app/internal" />
+        <source-file src="src/android/AlliancesJni.java" target-dir="src/app/internal" />
+
+
+        <!-- PRODUCTION - comment out source files below for debugging -->
+
+        <!-- Lib C++ Shared -->
+        <source-file src="src/android/libs/arm64-v8a/libc++_shared.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libc++_shared.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libc++_shared.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libc++_shared.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <!-- Compiled C libraries - release binaries - device -->
+        <source-file src="src/android/libs/arm64-v8a/libjnialliances.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libjnialliances.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+
+        <!-- Compiled C libraries - release binaries - emulator -->
+        <source-file src="src/android/libs/x86/libjnialliances.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libjnialliances.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <!-- Compiled C libraries - debug binaries - device -->
+        <source-file src="src/android/obj/local/armeabi-v7a/libjnialliances.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/arm64-v8a/libjnialliances.so" target-dir="app/obj/local/arm64-v8a/" />
+
+        <!-- Compiled C libraries - debug binaries - emulator -->
+        <source-file src="src/android/obj/local/x86/libjnialliances.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libjnialliances.so" target-dir="app/obj/local/x86_64/" />
+
+
+
+        <!-- Compiled C++ libraries - release binaries - device -->
+        <source-file src="src/android/libs/arm64-v8a/libjnialliancespp.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libjnialliancespp.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+
+        <!-- Compiled C++ libraries - release binaries - emulator -->
+        <source-file src="src/android/libs/x86/libjnialliancespp.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libjnialliancespp.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <!-- Compiled C++ libraries - debug binaries - device -->
+        <source-file src="src/android/obj/local/armeabi-v7a/libjnialliancespp.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/arm64-v8a/libjnialliancespp.so" target-dir="app/obj/local/arm64-v8a/" />
+
+        <!-- Compiled C++ libraries - debug binaries - emulator -->
+        <source-file src="src/android/obj/local/x86/libjnialliancespp.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libjnialliancespp.so" target-dir="app/obj/local/x86_64/" />
+
+
+        <!-- Compiled C++ Whisper libraries -->
+        <source-file src="src/android/libs/arm64-v8a/libwhisper.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libwhisper.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libwhisper.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libwhisper.so" target-dir="libs/x86_64/" />
+
+        <!-- Compiled C++ GGML libraries -->
+        <source-file src="src/android/libs/arm64-v8a/libggml.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libggml.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libggml.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libggml.so" target-dir="libs/x86_64/" />
+
+        <!-- Whisper model -->
+        <source-file src="src/custominclude/ggml-base.bin" target-dir="app/src/main/assets/" />
+        <!-- <source-file src="src/custominclude/ggml-small.bin" target-dir="app/src/main/assets/" /> -->
+
+        <framework src="com.arthenica:mobile-ffmpeg-full:4.4" />
+
+        <!-- Compiled Python 3 libraries -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libpython3.11.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libpython3.11.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libpython3.11.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libpython3.11.so" target-dir="app/src/main/jniLibs/x86_64/" /> -->
+
+        <!-- <source-file src="src/android/libs/arm64-v8a/libpython3.11.so" target-dir="libs/arm64-v8a" />
+        <source-file src="src/android/libs/armeabi-v7a/libpython3.11.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/x86/libpython3.11.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86_64/libpython3.11.so" target-dir="libs/x86_64" /> -->
+
+        <!-- <source-file src="src/android/obj/local/arm64-v8a/libpython3.11.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libpython3.11.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libpython3.11.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libpython3.11.so" target-dir="app/obj/local/x86_64/" /> -->
+        
+
+
+        <!-- Compiled SQLite 3 libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libsqlite3.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libsqlite3.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libsqlite3.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libsqlite3.so" target-dir="libs/x86_64/" /> -->
+
+
+        <!-- Compiled FFI libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libffi.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libffi.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libffi.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libffi.so" target-dir="libs/x86_64/" /> -->
+
+
+        <!-- Compiled Crypto libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libcrypto1.1.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libcrypto1.1.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libcrypto1.1.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libcrypto1.1.so" target-dir="libs/x86_64/" /> -->
+
+
+        <!-- Compiled SSL libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libssl1.1.so" target-dir="libs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libssl1.1.so" target-dir="libs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libssl1.1.so" target-dir="libs/x86/" />
+        <source-file src="src/android/libs/x86_64/libssl1.1.so" target-dir="libs/x86_64/" /> -->
+
+
+        <!-- Compiled Main libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libmain.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libmain.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libmain.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libmain.so" target-dir="app/src/main/jniLibs/x86_64/" /> -->
+
+        <!-- <source-file src="src/android/libs/arm64-v8a/libmain.so" target-dir="libs/arm64-v8" />
+        <source-file src="src/android/libs/armeabi-v7a/libmain.so" target-dir="libs/armeabi-v7a" />
+        <source-file src="src/android/libs/x86/libmain.so" target-dir="libs/x86" />
+        <source-file src="src/android/libs/x86_64/libmain.so" target-dir="libs/x86_64" /> -->
+
+        <!-- <source-file src="src/android/obj/local/arm64-v8a/libmain.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libmain.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libmain.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libmain.so" target-dir="app/obj/local/x86_64/" /> -->
+
+
+
+        <!-- Compiled libSDL2 libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libSDL2.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libSDL2.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libSDL2.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libSDL2.so" target-dir="app/src/main/jniLibs/x86_64/" /> -->
+
+        <!-- <source-file src="src/android/obj/local/arm64-v8a/libSDL2.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libSDL2.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libSDL2.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libSDL2.so" target-dir="app/obj/local/x86_64/" /> -->
+
+
+
+        <!-- Compiled libSDL2_image libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libSDL2_image.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libSDL2_image.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libSDL2_image.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libSDL2_image.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <source-file src="src/android/obj/local/arm64-v8a/libSDL2_image.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libSDL2_image.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libSDL2_image.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libSDL2_image.so" target-dir="app/obj/local/x86_64/" /> -->
+
+
+
+        <!-- Compiled libSDL2_mixer libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libSDL2_mixer.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libSDL2_mixer.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libSDL2_mixer.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libSDL2_mixer.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <source-file src="src/android/obj/local/arm64-v8a/libSDL2_mixer.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libSDL2_mixer.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libSDL2_mixer.so" target-dir="aapp/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libSDL2_mixer.so" target-dir="app/obj/local/x86_64/" /> -->
+
+
+
+        <!-- Compiled libSDL2_ttf libraries (Python dependencies) -->
+        <!-- <source-file src="src/android/libs/arm64-v8a/libSDL2_ttf.so" target-dir="app/src/main/jniLibs/arm64-v8a/" />
+        <source-file src="src/android/libs/armeabi-v7a/libSDL2_ttf.so" target-dir="app/src/main/jniLibs/armeabi-v7a/" />
+        <source-file src="src/android/libs/x86/libSDL2_ttf.so" target-dir="app/src/main/jniLibs/x86/" />
+        <source-file src="src/android/libs/x86_64/libSDL2_ttf.so" target-dir="app/src/main/jniLibs/x86_64/" />
+
+        <source-file src="src/android/obj/local/arm64-v8a/libSDL2_ttf.so" target-dir="app/obj/local/arm64-v8a/" />
+        <source-file src="src/android/obj/local/armeabi-v7a/libSDL2_ttf.so" target-dir="app/obj/local/armeabi-v7a/" />
+        <source-file src="src/android/obj/local/x86/libSDL2_ttf.so" target-dir="app/obj/local/x86/" />
+        <source-file src="src/android/obj/local/x86_64/libSDL2_ttf.so" target-dir="app/obj/local/x86_64/" /> -->
+
+
+        <!-- Add Gradle implementation dependency of libSDL2 (Python dependencies) -->
+        <!-- <framework src="org.libsdl:SDL2:2.0.14" />
+        <framework src="org.libsdl:SDL2_image:2.0.5" />
+        <framework src="org.libsdl:SDL2_mixer:2.0.4" />
+        <framework src="org.libsdl:SDL2_ttf:2.0.15" /> -->
+
+        <!-- <source-file src="src/custominclude/libsdlapp/SDL.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/SDLActivity.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/SDLAudioManager.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/SDLControllerManager.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/SDLSurface.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/HIDDevice.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/HIDDeviceUSB.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/HIDDeviceManager.java" target-dir="app/src/main/java/org/libsdl/app/" />
+        <source-file src="src/custominclude/libsdlapp/HIDDeviceBLESteamController.java" target-dir="app/src/main/java/org/libsdl/app/" /> -->
+
+        <!-- END PRODUCTION -->
+
+
+
+        <!-- DEBUG - these files are not needed for production -->
+
+        <!-- Custom gradle file to setup NDK for debugging -->
+        <source-file src="src/android/build-extras.gradle" target-dir="."/>
+
+        <!-- NDK Make file for source references for C debugging -->
+        <source-file src="src/android/jni/Android.mk" target-dir="app/src/main/java/c/android/jni/"/>
+
+        <!-- C JNI source file -->
+        <source-file src="src/android/jni/jnialliances.c" target-dir="app/src/main/java/c/android/jni/"/>
+
+        <!-- C source files -->
+        <source-file src="src/common/alliances.h" target-dir="app/src/main/java/c/common/"/>
+        <source-file src="src/common/alliances.c" target-dir="app/src/main/java/c/common/"/>
+
+        <!-- C++ source files -->
+        <source-file src="src/common/alliancespp.hpp" target-dir="app/src/main/java/c/common/"/>
+        <source-file src="src/common/alliancespp.cpp" target-dir="app/src/main/java/c/common/"/>
+
+
+        <!-- <source-file src="src/common/mylib/mylib.h" target-dir="app/src/main/java/c/common/mylib"/>
+        <source-file src="src/common/mylib/mylib.c" target-dir="app/src/main/java/c/common/mylib"/>
+        <source-file src="src/common/mylib/mycomponent.h" target-dir="app/src/main/java/c/common/mylib"/>
+        <source-file src="src/common/mylib/mycomponent.c" target-dir="app/src/main/java/c/common/mylib"/>
+        <source-file src="src/common/mylib/parts/mypart.h" target-dir="app/src/main/java/c/common/mylib/parts"/>
+        <source-file src="src/common/mylib/parts/mypart.c" target-dir="app/src/main/java/c/common/mylib/parts"/> -->
+
+        <!-- END DEBUG -->
+
+    </platform>
+
+    <!-- iOS -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Alliances">
+                <param name="ios-package" value="Alliances" onload="true" />
+            </feature>
+        </config-file>
+
+        <!-- THe bridge between Swift and C must be an objective-c header file with the name <your app name>-Bridging-Header.h -->
+        <header-file src="src/ios/Alliances-Bridging-Header.h" />
+        <source-file src="src/ios/Alliances.swift" />
+
+
+        <!-- C source files -->
+        <header-file src="src/common/alliances.h" />
+        <source-file src="src/common/alliances.c" />
+        <header-file src="src/common/httpserver.h" />
+        <source-file src="src/common/httpserver.c" />
+
+        <!-- C++ source files -->
+        <!-- <header-file src="src/common/alliancespp.hpp" />
+        <source-file src="src/common/alliancespp.cpp" /> -->
+
+        <!-- Lib C++ Framework -->
+        <!-- <framework src="libc++.tbd" />
+        <framework src="libz.tbd" /> -->
+
+        <!-- C++ Whisper libraries -->
+        <header-file src="whispercpp/include/whisper.h" />
+        <header-file src="whispercpp/src/whisper-mel.hpp" />
+        <!-- <source-file src="whispercpp/src/whisper.cpp" compiler-flags="-DWHISPER_USE_COREML -DWHISPER_COREML_ALLOW_FALLBACK -DGGML_USE_METAL" /> -->
+        <source-file src="whispercpp/src/whisper.cpp" compiler-flags="-DWHISPER_USE_COREML -DWHISPER_COREML_ALLOW_FALLBACK" />
+        
+        <!-- <source-file src="src/ios/coreml" /> -->
+        <header-file src="whispercpp/src/coreml/whisper-decoder-impl.h" target-dir="coreml" />
+        <source-file src="whispercpp/src/coreml/whisper-decoder-impl.m" target-dir="coreml" />
+        <header-file src="whispercpp/src/coreml/whisper-encoder-impl.h" target-dir="coreml" />
+        <source-file src="whispercpp/src/coreml/whisper-encoder-impl.m" target-dir="coreml" />
+        <header-file src="whispercpp/src/coreml/whisper-encoder.h" target-dir="coreml" />
+        <source-file src="whispercpp/src/coreml/whisper-encoder.mm" target-dir="coreml" />
+
+        <header-file src="whispercpp/ggml/include/ggml.h" />
+        <header-file src="whispercpp/ggml/include/ggml-alloc.h" />
+        <header-file src="whispercpp/ggml/include/ggml-backend.h" />
+        <header-file src="whispercpp/ggml/src/ggml-impl.h" />
+        <header-file src="whispercpp/ggml/src/ggml-backend-impl.h" />
+        <header-file src="whispercpp/ggml/src/ggml-common.h" />
+        <header-file src="whispercpp/ggml/src/ggml-quants.h" />
+        
+        <!-- <header-file src="whispercpp/ggml/include/ggml-metal.h" /> -->
+
+        <!-- <source-file src="whispercpp/ggml/src/ggml.c" compiler-flags="-DGGML_USE_ACCELERATE -DGGML_USE_METAL" /> -->
+        <source-file src="whispercpp/ggml/src/ggml.c" compiler-flags="-DGGML_USE_ACCELERATE" />
+        
+        <source-file src="whispercpp/ggml/src/ggml-backend.c"  />
+        <source-file src="whispercpp/ggml/src/ggml-alloc.c"  />
+        <source-file src="whispercpp/ggml/src/ggml-quants.c" />
+        <!-- <source-file src="whispercpp/ggml/src/ggml-metal.m" compiler-flags="-framework Foundation -framework Metal -framework MetalKit -fno-objc-arc" /> -->
+        
+        <!-- NOT ADD HERE - USE setup-cordova-fast.sh <resource-file src="whispercpp/ggml/src/ggml-metal.metal" /> -->
+
+        <!-- Whisper model -->
+        <resource-file src="src/custominclude/ggml-base.bin" />
+
+        <podspec>
+            <pods>
+                <pod name="mobile-ffmpeg-full" spec="~> 4.4" />
+            </pods>
+            <post_install>
+                post_install do |installer|
+                    installer.pods_project.targets.each do |target|
+                        target.build_configurations.each do |config|
+                            if config.build_settings['PLATFORM_NAME'] == 'iphonesimulator'
+                                config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+                            end
+                        end
+                    end
+                end
+            </post_install>
+        </podspec>
+    </platform>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Alliances" >
+                <param name="android-package" value="app.internal.Alliances"/>
+            </feature>
+        </config-file>
+
+        <js-module src="src/browser/AlliancesProxy.js" name="AlliancesProxy">
+            <runs />
+        </js-module>
+    </platform>
+
+</plugin>
