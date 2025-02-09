@@ -38,7 +38,7 @@ All code changes happen through **pull requests**. We actively welcome your cont
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the **AGPL v3 License**. In short, when you submit code changes, your submissions are understood to be under the same AGPL v3 License that covers the project.
+By contributing, you agree that your contributions will be licensed under the [**AGPL v3 License**](LICENSE). In short, when you submit code changes, your submissions are understood to be under the same AGPL v3 License that covers the project.
 
 ---
 
