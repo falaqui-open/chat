@@ -339,6 +339,8 @@ cordova plugin add cordova-plugin-firebase-messaging
 #     app_support_files/google-services.json
 #     app_support_files/GoogleService-Info.plist
 #     app_support_files/...firebase-adminsdk...json
+#  7) Change the parameter FIREBASE_ADMIN_SDK_FILE_NAME in the .env file to the name of the file downloaded from the Firebase portal
+#      Example of file name: falaqui-firebase-adminsdk-12345.json
 echo [$(date +"%I:%M:%S")] Building Messaging service...
 cp $script_dir/app_support_files/google-services.json $script_dir/app_build_$3/$1/
 cp $script_dir/app_support_files/GoogleService-Info.plist $script_dir/app_build_$3/$1/
