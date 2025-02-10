@@ -5,6 +5,9 @@ app_build_android/
 app_build_browser/
 app_build_electron/
 app_build/
+app_support_files/*firebase*.json
+app_support_files/google-services.json
+app_support_files/*.plist
 local_modules/media/*.png
 local_modules/upload/*.*
 local_modules/upload/filestorage

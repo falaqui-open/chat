@@ -17,28 +17,28 @@ CONTACT_LIST_USAGE_REASON="We need access to your device's contact list descript
 MICROPHONE_USAGE_REASON="We need microphone access to record sounds."
 
 if [ -z "$1" ]
-  then
+    then
     echo "No argument supplied (App Name)\n"
     echo 'Example How to Use ./setup-cordova.sh "falaqui" "FalaQui" "ios" "1.0.0"\n'
     exit 1
 fi
 
 if [ -z "$2" ]
-  then
+    then
     echo "Missing 2nd argument (App Project Name)\n"
     echo 'Example How to Use ./setup-cordova.sh "falaqui" "FalaQui" "ios" "1.0.0"\n'
     exit 1
 fi
 
 if [ -z "$3" ]
-  then
+    then
     echo "Missing 3th argument (Platform)\n"
     echo 'Example How to Use ./setup-cordova.sh "falaqui" "FalaQui" "ios" "1.0.0"\n'
     exit 1
 fi
 
 if [ -z "$4" ]
-  then
+    then
     echo "Missing 4th argument (Version)\n"
     echo 'Example How to Use ./setup-cordova.sh "falaqui" "FalaQui" "ios" "1.0.0"\n'
     exit 1
@@ -58,7 +58,7 @@ case "$1" in
 esac
 
 if [ "$3" != "ios" ] && [ "$3" != "android" ] && [ "$3" != "browser" ] && [ "$3" != "electron" ] 
-  then
+    then
     echo "Invalid platform $3"
     exit 1
 fi
@@ -226,22 +226,22 @@ cd $1
 echo [$(date +"%I:%M:%S")] Platform install...
 
 if [ "$3" = "ios" ]
-  then
+    then
     cordova platform add ios
 fi
 
 if [ "$3" = "android" ]
-  then
+    then
     cordova platform add android
 fi
 
 if [ "$3" = "browser" ]
-  then
+    then
     cordova platform add browser
 fi
 
 if [ "$3" = "electron" ]
-  then
+    then
     cordova platform add electron@latest
     # cordova platform add https://github.com/apache/cordova-electron@latest
 fi
@@ -316,3 +316,67 @@ cordova plugin add cordova-plugin-keyboard
 cordova plugin add cordova-plugin-email-composer
 cordova plugin add cordova.plugins.diagnostic
 cordova plugin add cordova-plugin-badge
+
+# Firebase Cloud Messaging Setup
+# Info: https://github.com/chemerisuk/cordova-plugin-firebase-messaging
+cordova plugin add cordova-plugin-firebase-messaging
+
+# Copy the google-services.json file to the project
+# Is required to have the google-services.json file in the app_support_files folder
+# How to get Firebase configuration file: https://support.google.com/firebase/answer/7015592
+#  Steps to reproduce:
+#  1) Firebase Access: https://firebase.google.com/products/cloud-messaging and Enter Get Started
+#  2) Open the new project and Add the Android and iOS App
+#  3) Save the config file and Finish the setup.
+#  4) For iOS upload the APNS authentication key and certificates
+#  5) Into General register the iOS app with bundle, App Store ID and Team Id.
+#     5.1) Into Cloud Messaging Menu upload the Apple APNS Key: https://developer.apple.com/account/resources/authkeys/list
+#     5.2) Name: Type a name. Eg.: apnsfalaqui
+#     5.3) Service: Apple Push Notifications service (APNs)
+#     5.4) Result is Key ID and P8 File to be uploaded in Upload in Firebase Cloud Messaging
+#     5.5) Go to Firebase portal open the Service Accounts get the service account file
+#  6) The exptected file structure is:
+#     app_support_files/google-services.json
+#     app_support_files/GoogleService-Info.plist
+#     app_support_files/...firebase-adminsdk...json
+echo [$(date +"%I:%M:%S")] Building Messaging service...
+cp $script_dir/app_support_files/google-services.json $script_dir/app_build_$3/$1/
+cp $script_dir/app_support_files/GoogleService-Info.plist $script_dir/app_build_$3/$1/
+
+# Firebase Repo Update for iOS
+if [ "$3" = "ios" ]
+    then
+    pod repo update
+fi
+
+# Firebase Proguard Rules for Android
+if [ "$3" = "android" ]
+    then
+    echo [$(date +"%I:%M:%S")]   Defining Proguard Custom Rules to use cordova-plugin-firebase-messaging plugin  ...
+
+    proguardRulesFile=$script_dir/app_build_$3/$1/proguard-custom.txt
+    touch $proguardRulesFile
+
+    echo [$(date +"%I:%M:%S")]   Writing $proguardRulesFile ...
+
+echo "
+
+# Keep names for methods with @CordovaMethod annotation in plugin cordova-plugin-firebase-messaging
+" >> $proguardRulesFile
+
+
+echo "-keepclassmembers class ** { 
+    @by.chemerisuk.cordova.support.CordovaMethod *; 
+}
+" >> $proguardRulesFile
+
+echo "-keep public enum by.chemerisuk.cordova.support.ReflectiveCordovaPlugin\$** { 
+    **[] \$VALUES; 
+    public *; 
+}
+" >> $proguardRulesFile
+
+cordova plugin add cordova-plugin-proguard
+
+fi
+
