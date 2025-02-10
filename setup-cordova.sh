@@ -382,3 +382,65 @@ cordova plugin add cordova-plugin-proguard
 
 fi
 
+
+
+
+
+# ************************************************************************************
+# ************************* cordova-plugin-qrscanner-11 ******************************
+# ************************************************************************************
+# Code forked at: https://github.com/joaocostabeeders/cordova-plugin-qrscanner-11.git
+# SuppressWarnings causes build warning "uses unchecked or unsafe operations" in the 
+# file platforms/android/app/src/main/java/com/bitpay/cordova/qrscanner/QRScanner.java
+cordova plugin add cordova-plugin-qrscanner-11
+if [ "$3" = "ios" ]
+  then
+    echo [$(date +"%I:%M:%S")]    Applying iOS fix into cordova-plugin-qrscanner-11 ...
+
+    originaldir=$(pwd)
+
+    dirfix="$script_dir/app_build_$3/$1/platforms/ios/$2/Plugins/cordova-plugin-qrscanner-11/"
+    
+    # Replace space to backslash
+    # dirfix=$(echo "$dirfix" | sed 's/ /\\ /g')
+
+    echo [$(date +"%I:%M:%S")]    Opening dir $dirfix
+    cd "$dirfix"
+
+    qrscannerfix1fromtext="UIApplication.openSettingsURLString"
+    qrscannerfix1totext="UIApplicationOpenSettingsURLString"
+    sed -i "" "s/$qrscannerfix1fromtext/$qrscannerfix1totext/" QRScanner.swift
+
+    qrscannerfix2fromtext="self.webView?.backgroundColor = UIColor.white"
+    qrscannerfix2totext="self.webView?.backgroundColor = UIColor.clear"
+    sed -i "" "s/$qrscannerfix2fromtext/$qrscannerfix2totext/" QRScanner.swift
+
+    qrscannerfix3fromtext="self.webView?.backgroundColor = UIColor.white"
+    qrscannerfix3totext="self.webView?.backgroundColor = UIColor.clear"
+    sed -i "" "s/$qrscannerfix3fromtext/$qrscannerfix3totext/" QRScanner.swift
+
+    qrscannerfix4fromtext="self.webView?.scrollView.backgroundColor = UIColor.white"
+    qrscannerfix4totext="self.webView?.scrollView.backgroundColor = UIColor.clear"
+    sed -i "" "s/$qrscannerfix4fromtext/$qrscannerfix4totext/" QRScanner.swift
+
+    cd $originaldir
+fi
+
+if [ "$3" = "android" ]
+  then
+    echo [$(date +"%I:%M:%S")]    Applying Android fix into cordova-plugin-qrscanner-11 ...
+    echo [$(date +"%I:%M:%S")]    *** No fix ***
+fi
+
+
+
+
+echo [$(date +"%I:%M:%S")] Hooks Plugins install...
+npm install xml2js --save
+
+echo [$(date +"%I:%M:%S")] Saving restore version config...
+cp config.xml config.xml.restore
+
+cd $script_dir
+
+# sh "setup-cordova-fast.sh" "$1" "$2" "$3" "$4"
