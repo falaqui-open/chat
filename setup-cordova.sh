@@ -137,7 +137,7 @@ if [ "$(uname)" = "Darwin" ]; then
     fi
 
     # MacOS: Install ImageMagick if not installed
-    if which convert >/dev/null; then
+    if which magick >/dev/null; then
         echo "imagemagick identified"
     else
         echo "Installing imagemagick..."
@@ -173,7 +173,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     fi
 
     # Linux: Install ImageMagick if not installed
-    if which convert >/dev/null; then
+    if which magick >/dev/null; then
         echo "imagemagick identified"
     else
         echo "Installing imagemagick..."
@@ -223,7 +223,7 @@ mkdir -p app_build_$3
 cd app_build_$3
 rm -rf $1
 
-cordova create $1 com$BUNDLEIDMARKETVALUE.$1 "$2" > /dev/null
+cordova create $1 com$BUNDLEIDMARKETVALUE.$1 "$2" 2>/dev/null
 
 if [ ! -d "$1" ]; then
     echo "The project was not created.\n"
@@ -236,22 +236,22 @@ echo [$(date +"%I:%M:%S")] Platform install...
 
 if [ "$3" = "ios" ]
     then
-    cordova platform add ios
+    cordova platform add ios 2>/dev/null
 fi
 
 if [ "$3" = "android" ]
     then
-    cordova platform add android
+    cordova platform add android 2>/dev/null
 fi
 
 if [ "$3" = "browser" ]
     then
-    cordova platform add browser
+    cordova platform add browser 2>/dev/null
 fi
 
 if [ "$3" = "electron" ]
     then
-    cordova platform add electron@latest
+    cordova platform add electron@latest 2>/dev/null
     # cordova platform add https://github.com/apache/cordova-electron@latest
 fi
 
@@ -264,16 +264,16 @@ echo [$(date +"%I:%M:%S")] Internal Plugins install...
 #     Androind Only Plugin Source               : ./alliances-compile-android-fast.sh
 #     iOS                                       : ./alliances-compile-ios.sh
 # Note: It is required to have NDK and SDK installed on the machine to compile the plugin.
-cordova plugin add ../../cdv-plugins/internal-alliances/
+cordova plugin add ../../cdv-plugins/internal-alliances/ 2>/dev/null
 
 # Internal Plugin Device Locale
-cordova plugin add ../../cdv-plugins/internal-devicelocale/
+cordova plugin add ../../cdv-plugins/internal-devicelocale/ 2>/dev/null
 
 # Internal Plugin Native Screen
-cordova plugin add ../../cdv-plugins/internal-nativescreen/
+cordova plugin add ../../cdv-plugins/internal-nativescreen/ 2>/dev/null
 
 # Internal Plugin Contacts X Dev
-cordova plugin add ../../cdv-plugins/cordova-plugin-contacts-x-dev/
+cordova plugin add ../../cdv-plugins/cordova-plugin-contacts-x-dev/ 2>/dev/null
 
 # Internal Plugin Active Contacts
 if [ "$3" = "android" ]
@@ -296,7 +296,7 @@ echo "-keep class app.internal.ActiveContacts.** {*; }
 
 echo "-keep class app.internal.ActiveContacts.*
 " >> $proguardRulesFile
-cordova plugin add ../../cdv-plugins/internal-activecontacts/
+cordova plugin add ../../cdv-plugins/internal-activecontacts/ 2>/dev/null
 
 fi
 
@@ -305,30 +305,30 @@ fi
 
 echo [$(date +"%I:%M:%S")] Plugins install...
 
-cordova plugin add cordova-plugin-network-information
-cordova plugin add cordova-plugin-camera --variable CAMERA_USAGE_DESCRIPTION="$CAMERA_USAGE_REASON" --variable PHOTOLIBRARY_USAGE_DESCRIPTION="$PHOTO_LIBRAY_USAGE_REASON"
-cordova plugin add cordova-plugin-media --variable MICROPHONE_USAGE_DESCRIPTION="$MICROPHONE_USAGE_REASON"
-cordova plugin add cordova-plugin-device
-cordova plugin add cordova-clipboard
-cordova plugin add cordova-plugin-webviewcolor
-cordova plugin add cordova-plugin-file
-cordova plugin add cordova-plugin-inappbrowser
-cordova plugin add cordova-plugin-app-version
-cordova plugin add https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git
+cordova plugin add cordova-plugin-network-information 2>/dev/null
+cordova plugin add cordova-plugin-camera --variable CAMERA_USAGE_DESCRIPTION="$CAMERA_USAGE_REASON" --variable PHOTOLIBRARY_USAGE_DESCRIPTION="$PHOTO_LIBRAY_USAGE_REASON" 2>/dev/null
+cordova plugin add cordova-plugin-media --variable MICROPHONE_USAGE_DESCRIPTION="$MICROPHONE_USAGE_REASON" 2>/dev/null
+cordova plugin add cordova-plugin-device 2>/dev/null
+cordova plugin add cordova-clipboard 2>/dev/null
+cordova plugin add cordova-plugin-webviewcolor 2>/dev/null
+cordova plugin add cordova-plugin-file 2>/dev/null
+cordova plugin add cordova-plugin-inappbrowser 2>/dev/null
+cordova plugin add cordova-plugin-app-version 2>/dev/null
+cordova plugin add https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git 2>/dev/null
 
-# Plugin installed to create contacts
+# Plugin installed to create contacts 2>/dev/null
 cordova plugin add cordova-plugin-contacts
 
-cordova plugin add cordova-plugin-contacts-phonenumbers # Used to fetch numbers when internal-activecontacts cannot do it
-cordova plugin add cordova-sqlite-storage
-cordova plugin add cordova-plugin-keyboard
-cordova plugin add cordova-plugin-email-composer
-cordova plugin add cordova.plugins.diagnostic
-cordova plugin add cordova-plugin-badge
+cordova plugin add cordova-plugin-contacts-phonenumbers 2>/dev/null # Used to fetch numbers when internal-activecontacts cannot do it
+cordova plugin add cordova-sqlite-storage 2>/dev/null
+cordova plugin add cordova-plugin-keyboard 2>/dev/null
+cordova plugin add cordova-plugin-email-composer 2>/dev/null
+cordova plugin add cordova.plugins.diagnostic 2>/dev/null
+cordova plugin add cordova-plugin-badge 2>/dev/null
 
 # Firebase Cloud Messaging Setup
 # Info: https://github.com/chemerisuk/cordova-plugin-firebase-messaging
-cordova plugin add cordova-plugin-firebase-messaging
+cordova plugin add cordova-plugin-firebase-messaging 2>/dev/null
 
 # Copy the google-services.json file to the project
 # Is required to have the google-services.json file in the app_support_files folder
@@ -387,7 +387,7 @@ echo "-keep public enum by.chemerisuk.cordova.support.ReflectiveCordovaPlugin\$*
 }
 " >> $proguardRulesFile
 
-cordova plugin add cordova-plugin-proguard
+cordova plugin add cordova-plugin-proguard 2>/dev/null
 
 fi
 
@@ -401,7 +401,7 @@ fi
 # Code forked at: https://github.com/joaocostabeeders/cordova-plugin-qrscanner-11.git
 # SuppressWarnings causes build warning "uses unchecked or unsafe operations" in the 
 # file platforms/android/app/src/main/java/com/bitpay/cordova/qrscanner/QRScanner.java
-cordova plugin add cordova-plugin-qrscanner-11
+cordova plugin add cordova-plugin-qrscanner-11 2>/dev/null
 if [ "$3" = "ios" ]
   then
     echo [$(date +"%I:%M:%S")]    Applying iOS fix into cordova-plugin-qrscanner-11 ...

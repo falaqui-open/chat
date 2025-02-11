@@ -57,6 +57,21 @@ var rootdir = process.argv[2];
 //console.log("ENV: " + JSON.stringify(process.env));
 
 var allPlatforms = process.env.CORDOVA_PLATFORMS;
+
+if(allPlatforms == null)
+{
+    // Read from 2 directories above a local file last-build-platform.txt (if exists) the content and store into allPlatforms
+    var lastBuildPlatformPath = path.join(__dirname, '../../last-build-platform.txt');
+    if (fs.existsSync(lastBuildPlatformPath)) 
+    {
+        allPlatforms = fs.readFileSync(lastBuildPlatformPath, 'utf8');
+    }
+    else
+    {
+        console.log(`BUILD VERSION HOOK: last-build-platform.txt (${lastBuildPlatformPath}) not found.`);
+    }    
+}
+
 console.log("BUILD VERSION HOOK: Platforms: " + allPlatforms);
 
 var currentBuildPlatforms = allPlatforms.split(",");

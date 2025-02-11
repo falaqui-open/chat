@@ -15,6 +15,7 @@ local_modules/upload/db-phone-backup
 local_modules/upload-app-backup/*.*
 local_modules/download-app-backup/*.*
 local_modules/upload-receipt/*.*
+appfiles/last-build-platform.txt
 public/apks/
 setup-cordova-build.cfg
 

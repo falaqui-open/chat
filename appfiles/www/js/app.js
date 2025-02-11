@@ -83,11 +83,6 @@ var imageLocalFolderDetails = null;
 var audioLocalFolderLocation = "";
 var audioLocalFolderDetails = null;
 
-var miniAppLocalFolderLocation = "";
-var miniAppLocalFolderBaseLocation = "";
-var miniAppLocalFolderDetails = null;
-var miniAppLocalFolderSet = false;
-
 const evtDeviceConnectionChanged = new EventTarget();
 var evtBackButton = null; // Starts null
 
@@ -224,8 +219,6 @@ function onDeviceReady()
 
     mountGeneralEvents();
     // mountPushNotificationEvents();
-
-    miniAppWebServerStart();
 
     onDeviceBackbuttonPressEvent(async function(){
         const appMenuOpened = appMenuIsOpened();
@@ -398,8 +391,6 @@ async function initImagesLocalFolder()
     {
         imagesLocalFolderLocation = await getStorageDirectory();
         audioLocalFolderLocation = await getStorageDirectory();
-        miniAppLocalFolderLocation = await getStorageDirectory();
-        miniAppLocalFolderBaseLocation = "/";
         // imagesLocalFolderLocation = cordova.file.dataDirectory;
         // imagesLocalFolderLocation = `${cordova.file.dataDirectory}images/`;
         // imagesLocalFolderLocation = `${cordova.file.applicationStorageDirectory}images/`; // file:///data/user/0/com.br.falaqui/images/
@@ -410,8 +401,6 @@ async function initImagesLocalFolder()
     {
         imagesLocalFolderLocation = await getStorageDirectory();
         audioLocalFolderLocation = await getStorageDirectory();
-        miniAppLocalFolderLocation = await getStorageDirectory();
-        miniAppLocalFolderBaseLocation = "/";
         // imagesLocalFolderLocation = cordova.file.dataDirectory;
         // imagesLocalFolderLocation = `${cordova.file.dataDirectory}images/`;
         // imagesLocalFolderLocation = `${cordova.file.applicationStorageDirectory}Library/images/`;
@@ -422,12 +411,8 @@ async function initImagesLocalFolder()
         await waitForBrowserFileSystemInit();
         imagesLocalFolderLocation = browserFs.root.fullPath;
         audioLocalFolderLocation = browserFs.root.fullPath;
-        miniAppLocalFolderLocation = browserFs.root.fullPath;
-        miniAppLocalFolderBaseLocation = "/";
     }
-
-    miniAppLocalFolderSet = true;
-    
+   
     // Check when it isn't a browser env
     if(cordova.platformId != 'browser' && cordova.platformId != 'electron')
     {
@@ -449,16 +434,6 @@ async function initImagesLocalFolder()
         else
         {
             // console.log(`Local Audio Folder Not Yet Exists`);
-        }
-
-        miniAppLocalFolderDetails = await localFileURLPathResolve(miniAppLocalFolderLocation);
-        if(miniAppLocalFolderDetails.status == true)
-        {
-            // console.log(`Local Miniapp Folder Exists`);
-        }
-        else
-        {
-            // console.log(`Local Miniapp Folder Not Yet Exists`);
         }
     }
 }

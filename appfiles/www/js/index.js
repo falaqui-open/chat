@@ -47,16 +47,6 @@ function mountIndexEvents()
         swal(getTranslate(`internet-connection-unstable`, `It seems your internet connection is unstable. Check your connection.`), ``, `warning`);
     });
 
-    $(`#btnAppView`).off(`click`);
-    $(`#btnAppView`).on(`click`, function(){
-        startMiniApp(`appexample`);
-    });
-
-    $(`#btnAppCalcView`).off(`click`);
-    $(`#btnAppCalcView`).on(`click`, function(){
-        startMiniApp(`calculator`);
-    });
-
     $(`#btnEnableNotification`).off(`click`);
     $(`#btnEnableNotification`).on(`click`, async function(){
         if(cordova.platformId == 'browser' || cordova.platformId == 'electron')
