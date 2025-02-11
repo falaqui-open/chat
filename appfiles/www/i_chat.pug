@@ -1,0 +1,129 @@
+div#appChatArea(class="chat-container hide")
+
+    //- Audio Files
+    audio#audioChatMessageReceive(class="audio-chat-message-receive", preload="none")
+        source(src="audio/msg-receive.mp3", type="audio/mpeg")
+        source(src="audio/msg-receive.ogg", type="audio/ogg")
+        source(src="audio/msg-receive.wav", type="audio/wav")
+
+    audio#audioChatMessageSend(class="audio-chat-message-send", preload="none")
+        source(src="audio/msg-send.mp3", type="audio/mpeg")
+        source(src="audio/msg-send.ogg", type="audio/ogg")
+        source(src="audio/msg-send.wav", type="audio/wav")
+
+    audio#audioChatMessageAlert(class="audio-chat-message-alert", preload="none")
+        source(src="audio/msg-alert.mp3", type="audio/mpeg")
+        source(src="audio/msg-alert.ogg", type="audio/ogg")
+        source(src="audio/msg-alert.wav", type="audio/wav")
+
+    audio#audioChatNotification(class="audio-chat-notification", preload="none")
+        source(src="audio/notification.mp3", type="audio/mpeg")
+        source(src="audio/notification.ogg", type="audio/ogg")
+        source(src="audio/notification.wav", type="audio/wav")
+
+    include i_modal_chat_plus
+
+    div(class="chat-header")
+        a#btnChatExit(href="javascript:void(0)", class="chat-back-button btn-flat waves-effect waves-dark")
+            i(class="fa-solid fa-chevron-left left")
+            span(data-lang="back") Back
+        
+        a#chatTalkToContactLink(href="#")
+            img#chatTalkToPhoto(src="images/contact.png", class="chat-profile-image")
+            span#chatTalkToName(class="chat-profile-name") ...
+            div#chatTalkToOnlineStatus(class="chat-profile-online-indicator hide", data-lang="online") Online
+
+        a#btnChatMessageSearch(href="#", class="chat-messages-search-button btn-flat waves-effect waves-dark")
+            i(class="fa-solid fa-magnifying-glass")
+        
+        div#chatCompanySelection(class="chat-company-selection hide")
+            a#chatCompanySelectionDropDownTrigger(href="#!", class="dropdown-trigger btn-flat chat-company-selection-dropdown-trigger", data-target="chatCompanySelectionDropDownElements")
+                span#chatRoomCompanyName
+                i(class="fa-solid fa-caret-down right")
+            ul#chatCompanySelectionDropDownElements(class="dropdown-content chat-company-selection-dropdown-elements")
+
+    div#chatBox(class="chat-box y-scroll-element")
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message primary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+        //- div(class="message secondary")
+        //-     span(class="message-text") Lorem ipsum dolor sit amet. 
+        //-     div(class="timestamp") 02:11
+
+    a#btnChatRoomScrollDown(class="btn-chat-room-scroll-down btn-floating btn-large hide")
+        i(class="fa-solid fa-chevron-down")
+
+    div#pendingReplyMessageArea
+    div#pendingMediaToSendArea
+    div(class="chat-input-area")
+        div#chatMainInputDisabledMessage(class="chat-main-input-disabled-message hide")
+        
+        div(class="chat-input-add-action")
+            a#chatPlusButton(href="javascript:void(0)", class="chat-plus-button btn-flat waves-effect waves-dark")
+                i(class="chat-plus-icon fa-solid fa-plus")
+        div(class="chat-input-text-area")
+            textarea#chatMainInputText(class="chat-main-input chat-text-area", name="chatMainInputText", maxlength="4096", data-langplaceholder="message", placeholder="Message")
+            div#chatMainInputAudio(class="chat-main-input-audio hide")
+                div#chatAudioSiriWave(class="chat-audio-siri-wave")
+        div(class="chat-input-send")
+            a#chatSendButton(href="javascript:void(0)", class="chat-send-button hide btn-flat waves-effect waves-dark")
+                i(class="chat-send-icon material-icons") send
+            div#chatMicrophoneButton(class="chat-microphone-button btn-flat waves-effect waves-dark")
+                i(class="chat-send-icon material-icons") mic_none
+            div#chatMicrophoneStopButton(class="chat-microphone-stop-button hide btn-flat waves-effect waves-dark")
+                i(class="fa-solid fa-stop")
+            div#chatMicrophoneButtonLoadingOverlay(class="chat-microphone-button-loading-overlay hide")
+                i(class="fa-solid fa-microphone")
+                span(data-lang="microphone-press-and-hold-to-start-recording") Press and hold
+            div#chatMicrophoneSwipeLock(class="chat-microphone-swipe-lock hide")
+                i(class="unlock-icon fa-solid fa-unlock")
+                i(class="unlock-chevron fa-solid fa-chevron-up")
+script(src="js/i_chat.js")

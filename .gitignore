@@ -16,6 +16,7 @@ local_modules/upload-app-backup/*.*
 local_modules/download-app-backup/*.*
 local_modules/upload-receipt/*.*
 public/apks/
+setup-cordova-build.cfg
 
 # Logs
 logs

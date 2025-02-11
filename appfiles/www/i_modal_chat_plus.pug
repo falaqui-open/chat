@@ -1,0 +1,36 @@
+div#modalChatPlus(class="modal bottom-sheet modal-chat-plus")
+    div(class="modal-content")
+        div(class="row")
+            div(class="col s12 center")
+                div(class="title-screen", data-lang="actions") Actions
+
+        a#btnCloseModalChatPlus(href="#!", class="close-buton-float-right default-modal-close-button waves-effect waves-green btn-flat")
+            i(class="fa-solid fa-xmark left")
+            //- span(data-lang="text-close") Close
+
+
+        div(class="row no-margin")
+            div(class="col s4")
+                a#chatSharePhotoOrImage(href="#!")
+                    div(class="card chat-plus-card")
+                        div(class="card-content")
+                            i(class="fa-regular fa-image", class="chat-plus-item-icon")
+                            div(data-lang="send-a-photo-or-image", class="chat-plus-item-text") Send a Photo or Image
+            div(class="col s4")
+                a#chatShareLocation(href="#!")
+                    div(class="card chat-plus-card")
+                        div(class="card-content")
+                            i(class="fa-solid fa-location-dot", class="chat-plus-item-icon disabled")
+                            div(data-lang="location", class="chat-plus-item-text disabled") Location
+            div(class="col s4")
+                a#chatShareContact(href="#!")
+                    div(class="card chat-plus-card")
+                        div(class="card-content")
+                            i(class="fa-solid fa-address-card", class="chat-plus-item-icon disabled")
+                            div(data-lang="contact", class="chat-plus-item-text disabled") Contact
+            div(class="col s4")
+                a#chatShareDocument(href="#!")
+                    div(class="card chat-plus-card")
+                        div(class="card-content")
+                            i(class="fa-solid fa-file-lines", class="chat-plus-item-icon disabled")
+                            div(data-lang="contact", class="chat-plus-item-text disabled") Document

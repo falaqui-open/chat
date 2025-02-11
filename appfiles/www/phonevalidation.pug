@@ -1,0 +1,75 @@
+extends i_layout
+
+block main_variables
+    - var screen_type = 'system'
+
+block content
+
+    div(class="signup-header-top-space")
+    div(class="row")
+        div(class="col s6")
+            //- Header Left Area
+        div(class="col s6")
+            div(class="right")
+                include i_theme_switch
+
+    div(class="signup-icon-top-space")
+    div(class="row")
+        div(class="col s12 center")
+            img(src="images/icon.png", class="screen-big-icon-center")
+        div(class="col s12 center")
+            span(class="screen-big-app-name-center", data-lang="signup-app-name") FalaQui
+    div(class="row")
+        div(class="col s12 center")
+            span#phoneValidationNumber(class="screen-big-app-name-center")
+
+
+    //- Phone Validation Start
+    div#phoneValidationAreaStart(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    span(class="screen-note-text", data-lang="validation-phone-start") Your phone number needs to be validated by a validation code sent via SMS. Confirm that you are prepared to receive the code via SMS.
+        
+        div(class="center")
+            span#phoneValidationStartOfflineConnection(class="hide") 
+                i(class="material-icons error-message-icon") wifi_off
+                span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+        div(class="row signup-button-area")
+            div(class="col s12 center")
+                a#btnPhoneValidationReceiveCode(class="btn-small waves-effect waves-light")
+                    span(data-lang="receive-code") Receive Code
+
+
+    //- Phone Validation Code
+    div#phoneValidationAreaCode(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    span(class="screen-note-text", data-lang="enter-the-code-sent-by-sms-to-your-phone") Enter the code sent by SMS to your phone number
+
+        div(class="card signup-card")
+            div(class="card-content center")
+                div(class="row")
+                    div(class="col s12")
+                        input#txtPhoneValidationCode(class="phone-validation-code", type="tel", pattern="[0-9]*", maxlength="6")
+
+                    div(class="col s12 center")
+                        span#phoneValidationCodeOfflineConnection(class="hide") 
+                            i(class="material-icons error-message-icon") wifi_off
+                            span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+        div(class="row signup-button-area")
+            div(class="col s12 center")
+                a#btnPhoneValidationValidateCode(class="btn-small waves-effect waves-light disabled")
+                    span(data-lang="validate") Validate
+
+    //- Signout Area
+    div(class="row")
+        div(class="col s12 center")
+            a#btnPhoneValidationSignout(class="btn-flat waves-effect waves-light")
+                span(data-lang="signout") Sign out
+
+
+    script(src="js/phonevalidation.js")

@@ -11,10 +11,19 @@ set -e
 #   Platform (android | ios | browser | electron)
 
 script_dir=$(pwd)
-CAMERA_USAGE_REASON="We need access to your camera so that we can send documents with photos or identify your profile."
-PHOTO_LIBRAY_USAGE_REASON="We need access to your photo library so we can upload documents with photos or identify your profile."
-CONTACT_LIST_USAGE_REASON="We need access to your device's contact list description to facilitate your interaction with creditors and beneficiaries."
-MICROPHONE_USAGE_REASON="We need microphone access to record sounds."
+
+# Load the config file if it exists
+CONFIG_FILE="setup-cordova-build.cfg"
+if [ -f "$CONFIG_FILE" ]; then
+    source "$CONFIG_FILE"
+    # cat "$CONFIG_FILE"
+else
+    echo "${TRED}🔴 Configuration file not found. Please create a file named setup-cordova-build.cfg in the root directory of the project.${TNC}"
+    echo "${TRED}👉 Check the file setup-cordova-build.cfg-template for an example.\n${TNC}"
+    exit 1
+fi
+
+
 
 if [ -z "$1" ]
     then
@@ -443,4 +452,4 @@ cp config.xml config.xml.restore
 
 cd $script_dir
 
-# sh "setup-cordova-fast.sh" "$1" "$2" "$3" "$4"
+sh "setup-cordova-build.sh" "$1" "$2" "$3" "$4"

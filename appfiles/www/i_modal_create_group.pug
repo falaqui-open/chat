@@ -1,0 +1,131 @@
+div#modalCreateGroup(class="modal bottom-sheet modal-create-group")
+    div(class="modal-content")
+        div(class="row no-margin")
+            div(class="col s12 right-align")
+                a#btnCloseModalCreateGroup(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+
+            div(class="col s12 center")
+                span(data-lang="edit-group", class="screen-note-text") Create New Group
+
+        div
+            span(class="default-input-label", data-lang="name") Name
+            span#validateMsgGroupName(class="default-validate-field hide", data-lang="validate-inform-name") * Inform Name
+            img#imgCreateGroupPhoto(class="create-group-photo")
+            input#txtCreateGroupName(class="create-group-name default-text-input", type="text", maxlength="50")
+        div
+            span(class="default-input-label", data-lang="description") Description
+            span#validateMsgGroupDescription(class="default-validate-field hide", data-lang="validate-inform-description") * Inform Description
+            input#txtCreateGroupDescription(class="create-group-description default-text-input", type="text", maxlength="200")
+
+        div
+            span(class="default-input-label", data-lang="group-icon") Group Icon
+        div(class="card card-group-photo")
+            div(class="card-content")
+                div(class="row no-margin")
+                    div(class="col s12 center")
+                        a#createGroupEditChangePhotoRequest(href="#")
+                            div#createGroupChangePhotoLabel(class="group-edit-image-label")
+                                span(data-lang="change-photo") Change Photo
+                            img#imgGroupEditPhoto(class="group-edit-image", src="images/add-photo-padding.png")
+                    div#createGroupClearPhotoArea(class="col s12 center")
+                        a#createGroupClearPhoto(href="#", class="btn-flat")
+                            i(class="fa-solid fa-xmark left")
+                            span(data-lang="remove-photo") Remove Photo
+        
+        div(class="row")
+            div(class="col s12 center")
+                a#btnDeleteGroup(href="#",class="btn-flat red-text hide")
+                    i(class="fa-solid fa-trash-can")
+                    span(class="btn-delete-group" data-lang="delete-group") Delete Group
+                    
+        div(class="row")
+            div(class="col s12 center")
+                a#btnGroupMemberLeaveGroup(href="#",class="btn-flat red-text")
+                    i(class="fa-solid fa-arrow-right-from-bracket")
+                    span(class="btn-leave-group" data-lang="leave-group") Leave Group
+        
+        div(class="card")
+            div(class="card-content")
+
+                label
+                    input#chkUseGroupValidity(type="checkbox", class="filled-in")
+                    span(data-lang="group-validity") Group Validity
+                    span#validateMsgGroupValidity(class="default-validate-field hide", data-lang="validate-inform-groupvalidity") * Inform Group Validity
+
+                div#groupValidityFields(class="hide")
+                    //- Validity From a Date
+                    div
+                        label
+                            input(name="groupvalidityperiod", type="radio", value="groupvalidityperiodfromdate")
+                            span(data-lang="from-date") From Date
+                            span#validateMsgGroupFromDate(class="default-validate-field hide", data-lang="validate-inform-fromdate") * Inform From Date
+                        
+                        div#groupValidityFromMsg(class="group-validity-msg hide")
+                            span(data-lang="msg-group-validity-start") Group validity started - you will not be able to modify start date
+
+                        div#groupValidityPeriodFromDateFields(class="card hide")
+                            div(class="card-content")
+                                input#txtGroupValidityPeriodFromDate(type="text", class="datepicker default-text-input")
+
+                    //- Validity Between 2 Dates
+                    div
+                        label
+                            input(name="groupvalidityperiod", type="radio", value="groupvalidityperiodbtwdate")
+                            span(data-lang="between-date") Between Date
+                        
+                        div#groupValidityBetweenMsg(class="group-validity-msg hide")
+                            span(data-lang="msg-group-validity-start") Group validity started - you will not be able to modify start date
+
+                        div(class="card")
+                            div#groupValidityPeriodBetweenDateFields(class="card-content hide")
+                                div
+                                    span(data-lang="start-date") Start Date
+                                    span#validateMsgGroupStartDate(class="default-validate-field hide", data-lang="validate-inform-start-date") * Inform Start Date
+                                    input#txtGroupValidityPeriodBetweenDateStart(type="text", class="datepicker default-text-input")
+                                div
+                                    span(data-lang="end-date") End Date
+                                    span#validateMsgGroupEndDate(class="default-validate-field hide", data-lang="validate-inform-end-date") * Inform End Date
+                                    input#txtGroupValidityPeriodBetweenDateEnd(type="text", class="datepicker default-text-input")
+
+        div(class="card")
+            div(class="card-content")
+                label
+                    input#chkUseGroupAccessHours(type="checkbox", class="filled-in")
+                    span(data-lang="access-hours") Access Hours 
+
+                div#groupAccessHoursFields(class="card hide")
+                    div(class="card-content")
+                        div
+                            span(data-lang="txt-start") Start
+                            span#validateMsgGroupStartTime(class="default-validate-field hide", data-lang="validate-inform-start-time") * Inform Start Time
+                            input#txtGroupAccessHoursStart(type="time", class="default-text-input")
+                        div
+                            span(data-lang="txt-until") Until
+                            span#validateMsgGroupUntilTime(class="default-validate-field hide", data-lang="validate-inform-until-time") * Inform Until Time
+                            input#txtGroupAccessHoursEnd(type="time", class="default-text-input")
+
+        div(class="card group-members")
+            div(class="card-content")
+                div(class="collection")
+                    a#btnAddMembers(href="#!", class="collection-item btn-create-group-add-members")
+                        i(class="fa-solid fa-circle-plus group-members-icon")
+                        span(data-lang="add-members", class="group-members-item-title") Add Members
+                        span#validateMsgAddGroupMembers(class="default-validate-field hide", data-lang="validate-inform-members") * Inform Members for Group
+
+                div(class="collection")
+                    a#adminMemberItem(href="#!", class="collection-item")
+                        //- img(class="create-group-member-photo", src="images/contact.png", onerror="this.onerror=null;this.src='images/contact.png'")
+                        span(class="create-group-member-name") ...
+                        i(class="create-group-member-admin-icon fa-solid fa-user-tie")
+
+
+                div#createGroupMemberList(class="collection")
+                    
+        div(class="row")
+            div(class="col s12 center")
+                a#btnCreateGroupSave(class="btn  waves-effect waves-light disabled")
+                    span(data-lang="save") Save
+
+
+script(src="js/i_modal_create_group.js")

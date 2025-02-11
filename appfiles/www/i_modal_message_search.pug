@@ -1,0 +1,18 @@
+div#modalMessageSearch(class="modal bottom-sheet modal-message-search")
+    div(class="modal-content")
+        div(class="row no-margin")
+            div(class="col s12 right-align")
+                a#btnCloseModalMessageSearch(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+
+        div(class="app-chat-contacts-search")
+            i(class="material-icons input-prefix") search
+            input#txtChatMessageSearch(type="search", class="app-chat-message-search-input", data-langplaceholder="search-dots", placeholder="Search...")
+            a(href="#", class="search-clear-button", data-input="#txtChatMessageSearch")
+                i(class="fa-solid fa-circle-xmark")
+
+        div#messageSearchTitle(class="app-chat-message-search-title")
+
+        ul#chatMessageSearchList(class="app-chat-message-search-list collection")
+
+script(src="js/i_modal_message_search.js")

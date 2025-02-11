@@ -1,0 +1,53 @@
+div#modalSetServer(class="modal bottom-sheet modal-set-server")
+    div(class="modal-content")
+        div(class="row")
+            div(class="col s12 center")
+                a#btnCloseModalSetServer(href="#!", class="close-buton-float-right default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+                    //- span(data-lang="text-close") Close
+
+        div(class="row")
+            div(class="col s12")
+                div(class="card")
+                    div(class="card-content")
+                        div(data-lang="select-a-connection", class="set-app-server-connection-title") Select a Connection
+                        div#setAppServerConnectionList(class="collection")
+            div(class="col s12")
+                div(class="card")
+                    div(class="card-content")
+                        div(data-lang="add-new-connection", class="set-app-server-connection-title") Add New Connection
+                        div(data-lang="choose-a-method-below", class="set-app-server-connection-subtitle") Choose a method below
+                        ul#setAppServerConnectionAddOptionsCollapsible(class="collapsible")
+                            li
+                                div(class="collapsible-header")
+                                    i(class="fa-solid fa-qrcode")
+                                    span(data-lang="scan-qr-code") Scan QR Code
+                                div(class="collapsible-body no-padding")
+                                    div(class="center mt10 mb10")
+                                        a#btnSetAppServerQRCodeScan(href="#!", class="btn-small")
+                                            span(data-lang="start-scan") Start Scan
+                                            i(class="fa-solid fa-chevron-right right")
+                            li
+                                div(class="collapsible-header")
+                                    i(class="fa-solid fa-font")
+                                    span(data-lang="type-a-code") Type a Code
+                                div(class="collapsible-body no-padding")
+                                    div(class="center mt10 mb10")
+                                        div
+                                            input#txtSetAppServerConnectionCodeCheck(type="text", class="set-app-server-connection-input-check set-app-server-connection-input-code", maxlength="10", data-langplaceholder="type-here", placeholder="Type here")
+                                        a#btnSetAppServerConnectionCodeCheck(href="#", class="btn-small")
+                                            span(data-lang="check-code") Check Code
+                                            i(class="fa-solid fa-chevron-right right")
+                            li(class="hide")
+                                div(class="collapsible-header")
+                                    i(class="fa-solid fa-asterisk")
+                                    span(data-lang="type-a-company-identification") Type a Company Identification
+                                div(class="collapsible-body no-padding")
+                                    div(class="center mt10 mb10")
+                                        div
+                                            input#txtSetAppServerConnectionCompanyId(type="text", class="set-app-server-connection-input-check set-app-server-connection-input-company-id", maxlength="255", data-langplaceholder="type-here", placeholder="Type here")
+                                        a(href="#", class="btn-small")
+                                            span(data-lang="check") Check
+                                            i(class="fa-solid fa-chevron-right right")
+
+script(src="js/i_modal_set_server.js")

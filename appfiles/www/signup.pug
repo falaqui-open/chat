@@ -1,0 +1,183 @@
+extends i_layout
+
+block main_variables
+    - var screen_type = 'system'
+
+block content
+
+    include i_modal_take_photo
+    include i_modal_set_server
+
+    div(class="signup-header-top-space")
+    div(class="row")
+        div(class="col s6")
+            //- Header Left Area
+        div(class="col s6")
+            div(class="right")
+                include i_theme_switch
+
+    div(class="signup-icon-top-space")
+    div(class="row")
+        div(class="col s12 center")
+            img(src="images/icon.png", class="screen-big-icon-center")
+        div(class="col s12 center")
+            span(class="screen-big-app-name-center", data-lang="signup-app-name") FalaQui
+
+    //- Phone Input
+    div#signupAreaPhoneNumber(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    span(class="screen-note-text", data-lang="signup-phone-request") Please confirm your country code and enter your phone number.
+
+        div(class="card signup-card")
+            div(class="card-content center")
+                div(class="row no-margin")
+                    div(class="col s12")
+                        select#selSignupDialCode(class="browser-default sel-dial-code")
+                div(class="row no-margin")
+                    div(class="col s12")
+                        div#signupDialCodeValue(class="signup-selected-dial-code")
+                        input#txtSignupPhoneNumber(type="tel", class="signup-phone-number")
+                    div(class="col s12 center")
+                        span#signupInvalidMobilePhone(class="hide") 
+                            i(class="fa-solid fa-triangle-exclamation error-message-icon")
+                            span(class="error-message-text", data-lang="invalid-mobile-number") Invalid mobile number
+                    div(class="col s12 center")
+                        span#signupOfflineConnection(class="hide") 
+                            i(class="material-icons error-message-icon") wifi_off
+                            span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+        div(class="row signup-button-area")
+            div(class="col s12 center")
+                a#btnSignupPhoneNext(class="btn-signup-phone-next btn-small waves-effect waves-light disabled")
+                    span(data-lang="next") Next
+
+
+        div#connectionSettingsButtonArea(class="signup-connection-settings-button-area")
+            a#btnSignupConnectionSettings(href="#", class="waves-effect waves-teal btn-flat btn-flat-with-box")
+                i(class="fa-solid fa-globe left")
+                img#signupSelectedConnectionLogo(src="images/generic-image.png", class="signup-connection-settings-button-connection-logo")
+                span#signupSelectedConnectionName Default Server
+            a#btnSignupConnectionQRCode(href="#", class="waves-effect waves-teal btn-flat btn-flat-with-box hide")
+                i(class="material-icons") qr_code_scanner
+            a#btnSignupTestNativeScreen(href="#", class="waves-effect waves-teal btn-flat btn-flat-with-box hide")
+                i(class="material-icons") adjust
+
+    //- New user password
+    div#signupAreaPasswordSetup(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    span(class="screen-note-text", data-lang="signup-password-setup") Choose a 6-number Password.
+
+        div(class="card signup-card")
+            div(class="card-content center")
+                div(class="row")
+                    div(class="col s12")
+                        input#txtSignupPasswordSetup(class="signup-password", type="password", pattern="[0-9]*", inputmode="numeric", maxlength="6")
+                    div(class="col s12 center")
+                        span#signupPasswordSetupTooShort(class="hide") 
+                            i(class="fa-solid fa-triangle-exclamation error-message-icon")
+                            span(class="error-message-text", data-lang="password-too-short") Password too short
+                    div(class="col s12 center")
+                        span#signupPasswordSetupOfflineConnection(class="hide") 
+                            i(class="material-icons error-message-icon") wifi_off
+                            span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+
+        div(class="row signup-button-area")
+            div(class="col s6 center")
+                a#btnSignupPasswordPrevious(class="btn-small waves-effect waves-light")
+                    span(data-lang="previous") Previous
+
+            div(class="col s6 center")
+                a#btnSignupPasswordNext(class="btn-small waves-effect waves-light disabled")
+                    span(data-lang="next") Next
+
+
+
+    //- Existing user password
+    div#signupAreaPasswordExistingUser(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    div(class="screen-note-text", data-lang="this-number-is-already-registered") This number is already registered.
+                    span(class="screen-note-text", data-lang="enter-your-password") Enter your password.
+
+        div(class="card signup-card")
+            div(class="card-content center")
+                div(class="row no-margin")
+                    div(class="col s12")
+                        input#txtSignupPasswordExistingUser(class="signup-password", type="password", pattern="[0-9]*", inputmode="numeric", maxlength="6")
+
+                    div(class="col s12 center")
+                        span#signupPasswordExistingUserOfflineConnection(class="hide") 
+                            i(class="material-icons error-message-icon") wifi_off
+                            span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+
+        div(class="row signup-button-area")
+            div(class="col s6 center")
+                a#btnSignupPasswordExistingUserPrevious(class="btn-small waves-effect waves-light")
+                    span(data-lang="previous") Previous
+
+            div(class="col s6 center")
+                a#btnSignupPasswordExistingUserNext(class="btn-small waves-effect waves-light disabled")
+                    span(data-lang="next") Next
+
+        div(class="row")
+            div(class="col s12 center")
+                a#btnSignupPasswordReset(class="btn-small waves-effect waves-light reset-password-button")
+                    span(data-lang="forgot-my-password") I forgot my Password
+
+
+    //- User profile
+    div#signupUserProfile(class="signup-slide")
+        div(class="row")
+            div(class="col s12")
+                div(class="center")
+                    div(class="screen-note-text", data-lang="signup-profile-title") Please provide your name and an optional profile photo.
+
+        div(class="card signup-card")
+            div(class="card-content center")
+                div(class="row")
+                    div(class="col s12 center")
+                        a#signupUserProfileChangePhotoRequest(href="#")
+                            img#imgSignupProfilePhoto(class="signup-profile-image", src="images/add-photo-padding.png")
+                    div(class="col s12 center")
+                        a#signupUserProfileClearPhoto(href="#", class="btn-small hide")
+                            i(class="fa-solid fa-xmark left")
+                            span(data-lang="remove-photo") Remove Photo
+                div(class="row")
+                    div(class="col s12")
+                        input#txtSignupProfileName(type="text", class="signup-profile-name", maxlength="50", placeholder="Type your name here", data-langplaceholder="type-your-name-here")
+
+                    div(class="col s12 center")
+                        span#signupUserProfileOfflineConnection(class="hide") 
+                            i(class="material-icons error-message-icon") wifi_off
+                            span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+
+        div(class="row signup-button-area")
+            div(class="col s6 center")
+                a#btnSignupUserProfilePrevious(class="btn-small waves-effect waves-light")
+                    span(data-lang="previous") Previous
+
+            div(class="col s6 center")
+                a#btnSignupUserProfileNext(class="btn-small waves-effect waves-light disabled")
+                    span(data-lang="next") Next
+
+        div(class="row")
+            div(class="col s12 center")
+                span#signupUserProfileRegisterLoading(class="hide") 
+                    img(class="loading-animation-icon", src="/images/loading-grey.gif")
+                    span(class="loading-message-text", data-lang="registering-your-account") Registering your account...
+            div(class="col s12 center")
+                span#signupUserProfilePhotoUploading(class="hide") 
+                    img(class="loading-animation-icon", src="/images/loading-grey.gif")
+                    span(class="loading-message-text", data-lang="uploading-photo") Uploading photo...
+
+
+
+    script(src="js/signup.js")

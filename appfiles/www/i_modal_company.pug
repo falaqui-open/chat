@@ -1,0 +1,37 @@
+div#modalCompany(class="modal bottom-sheet")
+    div(class="modal-content")
+        div(class="row")
+            div(class="col s12 center")
+                a#btnCloseModalCompany(href="#!", class="close-buton-float-right default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+                    //- span(data-lang="text-close") Close
+
+        div#noCompanyLoading(class="row hide")
+            div(class="col s12")
+                div(class="progress")
+                    div(class="indeterminate")
+
+        div#noCompanyArea(class="row hide")
+            div(class="col s12")
+                div(class="modal-company-title center") 
+                    span(data-lang="no-companies-associated-with-your-account") There are no companies associated with your account
+
+
+        div#selectCompanyArea(class="row hide")
+            div(class="col s12")
+                div(class="modal-company-title center") 
+                    span(data-lang="select-your-company") Select your company
+            div(class="col s12")
+                select#selectCompanyInput(class="browser-default")
+            
+            div(class="col s12")
+                div#selectCompanyAdminArea(class="row hide")
+                    div(class="col s12 center")
+                        a#btnAddCompanyMembers(href="#", class="btn-flat waves-effect waves-light")
+                            i(class="fa-solid fa-circle-plus left")
+                            span(data-lang="add-members") Add Members
+
+            div(class="col s12")
+                div#modalCompanyMemberList(class="collection")
+
+script(src="js/i_modal_company.js")

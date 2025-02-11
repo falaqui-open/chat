@@ -1,0 +1,11 @@
+var build_version = "%%VERSION%%"; //mounted by hook
+var product_version = "%%PRODUCTVERSION%%"; //mounted by hook
+var useInternalSplashScreen = "%%USEINTERNALSPLASHSCREEN%%"; //mounted by hook
+var samsungGalaxyStoreBuild = "%%SAMSUNGGALAXYSTOREBUILD%%"; //mounted by hook
+var isiOS = "%%ISIOS%%"; //mounted by hook
+var endpoint = "%%ENDPOINT%%"; //mounted by hook
+var socketEndpoint = "%%SOCKETENDPOINT%%"; //mounted by hook
+var defaultServerEndpoint = "%%ENDPOINT%%"; //mounted by hook
+var defaultServerSocketEndpoint = "%%SOCKETENDPOINT%%"; //mounted by hook
+var sessionk = "e$Wd%wd2VR_5g_cb_N";
+var toastDefaultClasses = "blue";

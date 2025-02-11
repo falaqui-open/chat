@@ -1,0 +1,30 @@
+extends i_layout
+
+block content
+    div(class="area-header-action")
+        div(class="row")
+            div(class="col s12")
+                a#btnQrScanBackButton(href="javascript:void(0)", class="chat-back-button btn-flat waves-effect waves-dark")
+                    i(class="fa-solid fa-chevron-left left")
+                    span(data-lang="back") Back
+
+    div(class="start-screen-space")
+
+    div(class="row")
+        div#qrScanAim(class="qr-scan-aim hide")
+            img(src="images/scanning.png", class="qr-scan-aim-image")
+
+        div#reloadArea(class="hide")
+            div(class="note-title", data-lang="mobile-qrscan-reload-title") Try again after adjusting the permission settings on the device
+            div(class="center")
+                a#btnTryAgain(class="waves-effect waves-light btn-large buttonapp screen-button-large") 
+                    span(data-lang="mobile-try-again") Try Again
+                    i(class="material-icons right") refresh
+
+        div#cameraControls(class="hide scan-camera-controls")
+            div(class="center")
+                a#btnSwitchCamera(class="waves-effect waves-light btn-large buttonapp screen-button-large") 
+                    i(class="material-icons left") switch_camera
+                    span(data-lang="mobile-switch-camera") Switch Camera
+
+    script(src="js/qrscan.js")
