@@ -131,10 +131,207 @@ To know more about PM2 and its commands, please check the PM2 documentation at h
 
 
 ### Mobile App Build Requirements
-Coming soon...
+The app build uses a configuration file to set the environment variables for the build process. The build is made by an automated script that reads the configuration file and sets the values for the build process.
+
+The mobile app build is made to work under Linux Ubuntu and MacOS. The Windows platform was not yet tested and may not work.
+
+#### 1. Install Development Tools
+
+- **Falaqui Server**: The Falaqui Server must be running in the development environment or in a server accesible through the internet. The Falaqui Server is the backend of the Falaqui App and is responsible for the chat, user authentication, and other features. Follow the instructions in the [Server Setup](#server-setup) section to set up the Falaqui Server.
+
+- **XCode**: For iOS builds (MacOS only). Download from the App Store: [XCode](https://apps.apple.com/us/app/xcode/id497799835)
+
+- **Android Studio**: For Android builds. Download from the official website: [Android Studio](https://developer.android.com/studio) and set the Android SDK path in the environment variable ANDROID_HOME and the deprecated ANDROID_SDK_ROOT.
+
+- **Android SDK Stable Version**: It should be installed the latest stable version with Android Studio. But if you need to get a different version you can use the following command:
+
+Example to install the Android SDK in Ubuntu:
+```bash
+sudo snap install androidsdk
+```
+
+Example to install the Android SDK in MacOS:
+```bash
+brew install androidsdk
+```
+
+Example to set the Android SDK version 34.0.0:
+```bash
+androidsdk "platform-tools" "tools" "build-tools;34.0.0" "platforms;android-34"
+```
+
+- **Java Development Kit (JDK)**: For Android builds. Download from the Oracle a correct version of Java and set the JDK path in the environment variable JAVA_HOME. At the time of this documentation, the latest version of JDK for better use in Cordova project is Java 17.
+
+Example to install Java 17 in Ubuntu:
+```bash
+sudo apt install openjdk-17-jdk
+```
+
+Example to install Java 17 in MacOS:
+```bash
+brew install openjdk@17
+```
+
+If you are working with multiple versions of JDK in your Linux Ubuntu, you may set the JDK version using the following command:
+```bash
+sudo update-alternatives --config java
+```
+
+- **Node.JS**: Use the version 23 or later. Download from the official website: [Node.JS](https://nodejs.org/en/download/) or use the following command to install the latest version:
+
+For Linux Ubuntu:
+```bash
+curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+sudo -E bash nodesource_setup.sh
+sudo apt install -y nodejs
+```
+
+For MacOS:
+```bash
+brew install node
+```
+
+- **Gradle**: It should be installed with the Android Studio. But if you have any problems with unavailability of Gradle you may install it separately. Download from the official website: [Gradle](https://gradle.org/install/) and set the Gradle path in the environment variable GRADLE_HOME.
+Be sure to use the compatible version of Gradle with the JDK version. Check the site: [Gradle Compatibility](https://docs.gradle.org/current/userguide/compatibility.html)
+Example for JDK 17 you may try to use the Gradle 7.2 but some environments work better with Gradle 8.7.
+
+- **Enviroment Variables**: The environment variables after all installations should be set as follows:
+    - **ANDROID_HOME**: Android SDK path.
+    - **ANDROID_SDK_ROOT**: Android SDK path.
+    - **JAVA_HOME**: JDK path.
+    - **GRADLE_HOME**: Gradle path.
+
+#### 2. Create the Configuration File
+
+Create the setup-cordova-build.cfg file based on the setup-cordova-build.cfg-template file and set the values according to your environment.
+
+Important production values to be set:
+- **SERVERENDPOINT**: Server (Backend) endpoint is the HTTPS domain address pointing to the server where the backend is running. IMPORTANT: The address must be https with a valid SSL certificate.
+- **SOCKETENDPOINT**: Socket endpoint endpoint is the WSS domain address pointing to the server where the backend is running. IMPORTANT: The address must be wss with a valid SSL certificate.
+- **CONFIGHOSTNAME**: Config hostname is the domain address pointing to the server where the backend is running.
+- **GOOGLETAGMANAGER**: Google Tag Manager if available.
+- **BUNDLEIDMARKET**: Bundle ID market is the part of your bundle ID that identifies the market where the app is being published. For example, if your bundle ID is com.mydomain.myapp, the BUNDLEIDMARKET is mydomain.
+- **JSOBFUSCATOR**: JavaScript obfuscator (true or false).
+- **SAMSUNGGALAXYSTOREBUILD**: Samsung Galaxy Store build is the flag to indicate if the build is for the Samsung Galaxy Store (0 for false or 1 for true).
+- **CAMERA_USAGE_REASON**: Camera usage reason to inform the app store.
+- **PHOTO_LIBRAY_USAGE_REASON**: Photo library usage reason to inform the app store.
+- **CONTACT_LIST_USAGE_REASON**: Contact list usage reason to inform the app store.
+- **MICROPHONE_USAGE_REASON**: Microphone usage reason to inform the app store.
+
+Other values to be set:
+- **THEME_COLOR**: Theme color.
+- **DEFAULT_THEME**: Default theme.
+- **ANDROIDSPLASHSCREENMODE**: Android splash screen mode.
+- **SPLASHBACKGROUNDCOLOR**: Splash screen background color.
+- **SPLASHICONSVGBACKGROUNDCOLOR**: Splash icon SVG background color.
+- **SPLASHICONSVGSTROKECOLOR**: Splash icon SVG stroke color.
+- **KEYWORDS**: Keywords for the app.
+- **SPLASHSCREENDELAY**: Splash screen delay.
+- **FADESPLASHSCREENDURATION**: Fade splash screen duration.
+- **USEINTERNALSPLASHSCREEN**: Use internal splash screen.
+- **APPWEBSITE**: App website if available.
+- **PRODUCTVERSION**: Product version for internal use. It is not the app version.
+
+Example:
+```
+CAMERA_USAGE_REASON="We need access to your camera so that we can send documents with photos or identify your profile."
+PHOTO_LIBRAY_USAGE_REASON="We need access to your photo library so we can upload documents with photos or identify your profile."
+CONTACT_LIST_USAGE_REASON="We need access to your device's contact list description to facilitate your interaction with creditors and beneficiaries."
+MICROPHONE_USAGE_REASON="We need microphone access to record sounds."
+THEME_COLOR="#157fcc"
+DEFAULT_THEME="dark" # dark | light
+ANDROIDSPLASHSCREENMODE="image" # xml | image
+SPLASHBACKGROUNDCOLOR="#CF240A"
+SPLASHICONSVGBACKGROUNDCOLOR="#CF240A"
+SPLASHICONSVGSTROKECOLOR="#CF240A"
+KEYWORDS="falaqui, social chat, p2p, conversation, chat, social, social network, social media, social app, social platform, social network app, social network platform, social media app, social media platform, social chat app, social chat platform, social chat network, social chat network app, social chat network platform, social chat media, social chat media app, social chat media platform, social chat conversation, social chat conversation app, social chat conversation platform, social chat p2p, social chat p2p app, social chat p2p platform, social chat p2p network, social chat p2p network app, social chat p2p network platform, social chat p2p media, social chat p2p media app, social chat p2p media platform, social chat p2p conversation"
+SPLASHSCREENDELAY="50"
+FADESPLASHSCREENDURATION="100"
+USEINTERNALSPLASHSCREEN="0"
+APPWEBSITE="https://app.mydomain.com"
+PRODUCTVERSION="1.0"
+SERVERENDPOINT="https://flq.mydomain.com/"
+SOCKETENDPOINT="wss://flqwss.mydomain.com:24013"
+CONFIGHOSTNAME="flq.mydomain.com"
+GOOGLETAGMANAGER="GTM-XXXXXXXX"
+BUNDLEIDMARKET="world"
+JSOBFUSCATOR=false
+SAMSUNGGALAXYSTOREBUILD="0"
+```
+
+#### 3. Mount your app environment (Setup Script)
+The setup script is a shell script that mounts the environment for the app build. It sets the environment variables and installs the necessary packages for the build process.
+
+To run the setup script you must provide the follwing sequence of parameters:
+- **App Name**: The name of the app in lowercase without space. Example: falaqui
+- **App Project Name**: The name of the app project. Examples: Falaqui or "Falaqui App"
+- **App Platform**: The platform for the app build. Examples: android, ios, browser or electron. IMPORTANT: The electron platform was not yet tested and may not work.
+- **App Version**: The version of the app. Example: 1.0.0
+
+Example to build to the Browser platform:
+```bash
+./setup-cordova.sh "falaqui" "FalaQui" "browser" "1.0.0"
+```
+
+Example to build to the Android platform:
+```bash
+./setup-cordova.sh "falaqui" "FalaQui" "android" "1.0.0"
+```
+
+Example to build to the iOS platform (requires MacOS and XCode):
+```bash
+./setup-cordova.sh "falaqui" "FalaQui" "ios" "1.0.0"
+```
+
+After running the setup script, a Cordova project will be created in the app_build_CHOSEN_PLATFORM/APPNAME directory. Example of Cordova Project setup: app_build_android/falaqui.
+You may also use the Cordova CLI commands in the app_build_CHOSEN_PLATFORM/APPNAME directory to build the app for the chosen platform.
 
 ### Mobile App Build
-Coming soon...
+Every change in the app code must be followed by a new build process. The build process is made by an automated script that reads the configuration file and sets the values for the build process.
+
+Similar to the setup script, the build script is a shell script that builds the app for the chosen platform. It sets the environment variables and installs the necessary packages for the build process.
+
+Example to build to the Browser platform:
+```bash
+./setup-cordova-build.sh "falaqui" "FalaQui" "browser" "1.0.0"
+```
+
+Example to build to the Android platform:
+```bash
+./setup-cordova-build.sh "falaqui" "FalaQui" "android" "1.0.0"
+```
+
+Example to build to the iOS platform (requires MacOS and XCode):
+```bash
+./setup-cordova-build.sh "falaqui" "FalaQui" "ios" "1.0.0"
+```
+
+After running the build script, the app will be built in the app_build_CHOSEN_PLATFORM/APPNAME directory. Example of Cordova Project build: app_build_android/falaqui.
+
+### Running the App
+
+You may use the Cordova CLI commands in the app_build_CHOSEN_PLATFORM/APPNAME directory to run the app for the chosen platform.
+
+IMPORTANT: For a quick development view you can use the Browser platform. For a more realistic view you can use the Android and iOS platform. Some features like Agenda, Microphone, Camera and Audio Transcription may not work in the Browser platform.
+
+#### Browser Platform
+To run the app in the browser platform, use the following command:
+```bash
+cd app_build_browser/falaqui
+cordova run browser
+```
+IMPORTANT: For better performance, use a Chrome project browser like Google Chrome, Chromium, Brave, etc.
+
+#### Android Platform
+You may use the Android Studio to run the app in the Android platform. Open the Android Studio and select to open the app_build_android/falaqui/platforms/android directory. After the project is loaded, you may run the app in the Android Emulator or in a connected Android device. That is the recommended way to run the app in the Android platform specially for debugging and testing to view the Logcat logs.
+The Android Studio is also the recommended way to publish the app in the Google Play Store.
+
+Is also possible to run the terminal command to run the app in the Android platform. Use the following command:
+```bash
+cd app_build_android/falaqui
+cordova run android
+```
+
 
 ## License
 
