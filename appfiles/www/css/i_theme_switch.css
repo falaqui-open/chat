@@ -1,0 +1,61 @@
+.theme-switch {
+    position: relative;
+}
+
+.theme-switch-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.theme-switch-label {
+    display: block;
+    position: relative;
+    width: 64px;
+    height: 32px;
+    background-color: #292b30;
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+.theme-switch-label::before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 0;
+    bottom: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 2px #292b30 solid;
+    background-color: #ffffff;
+    color: #292b30;
+    transition: 0.4s;
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-size: 15px;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+
+.theme-switch-input:checked + .theme-switch-label {
+    background-color: #191919;
+}
+
+.theme-switch-input:checked + .theme-switch-label::before {
+    left: calc(100% - 32px);
+    border-color: #ffffff;
+    background-color: #292b30;
+    color: #ffffff;
+    content: "";
+}

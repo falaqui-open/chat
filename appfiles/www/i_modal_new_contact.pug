@@ -1,0 +1,82 @@
+div#modalNewContact(class="modal bottom-sheet modal-new-contact")
+    div(class="modal-content")
+        div(class="chat-phone-contact-header")
+            div(class="row no-margin")
+                div(class="col s12 right-align")
+                    a#btnCloseModalNewContact(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                        i(class="fa-solid fa-xmark left")
+
+                div(class="col s12")
+                    div(class="chat-contact-list-collection-title center") 
+                        span(data-lang="your-phone-s-contact-list", class="screen-note-text") Your Phone's Contact List
+                        span#chatPhoneContactListSize(class="screen-note-text")
+                div(class="col s12")
+                    div#contactListStatusHomePercent(class="contact-list-home-percent progress hide")
+                        div(class="determinate", style="width: 0%")
+                    div#contactListStatusHome(class="contact-list-status-home")
+
+            div(class="new-contact-action-list collection no-margin")
+                a#btnNewContactCreateNew(href="#", class="collection-item")
+                    i(class="fa-solid fa-user-plus")
+                    span(data-lang="create-new") Create New
+                a#btnNewContactCreateGroup(href="#", class="collection-item")
+                    i(class="fa-solid fa-users")
+                    span(data-lang="create-group") Create Group
+
+            div(class="app-chat-contacts-search")
+                i(class="material-icons input-prefix") search
+                input#txtPhoneContactSearch(type="search", class="app-chat-phone-contact-search-input", data-langplaceholder="search-dots", placeholder="Search...")
+                a(href="#", class="search-clear-button", data-input="#txtPhoneContactSearch")
+                    i(class="fa-solid fa-circle-xmark")
+
+
+            div(class="center")
+                label
+                    input#chkChatPhoneContactSelectionListLoadOnlyMobile(type="checkbox", class="filled-in", checked="checked")
+                    span(data-lang="only-mobile-phone-number") Only mobile phone numbers
+
+            div#chatPhoneContactSelectionListLoading(class="center hide")
+                span(data-lang="loading-device-contact-list") Loading device contact list...
+
+        div#chatPhoneContactAlphaNav(class="chat-phone-contact-alpha-nav")
+            div(class="chat-phone-contact-alpha-nav-item", data-query="#") #
+            div(class="chat-phone-contact-alpha-nav-item", data-query="A") A
+            div(class="chat-phone-contact-alpha-nav-item", data-query="B") B
+            div(class="chat-phone-contact-alpha-nav-item", data-query="C") C
+            div(class="chat-phone-contact-alpha-nav-item", data-query="D") D
+            div(class="chat-phone-contact-alpha-nav-item", data-query="E") E
+            div(class="chat-phone-contact-alpha-nav-item", data-query="F") F
+            div(class="chat-phone-contact-alpha-nav-item", data-query="G") G
+            div(class="chat-phone-contact-alpha-nav-item", data-query="H") H
+            div(class="chat-phone-contact-alpha-nav-item", data-query="I") I
+            div(class="chat-phone-contact-alpha-nav-item", data-query="J") J
+            div(class="chat-phone-contact-alpha-nav-item", data-query="K") K
+            div(class="chat-phone-contact-alpha-nav-item", data-query="L") L
+            div(class="chat-phone-contact-alpha-nav-item", data-query="M") M
+            div(class="chat-phone-contact-alpha-nav-item", data-query="N") N
+            div(class="chat-phone-contact-alpha-nav-item", data-query="O") O
+            div(class="chat-phone-contact-alpha-nav-item", data-query="P") P
+            div(class="chat-phone-contact-alpha-nav-item", data-query="Q") Q
+            div(class="chat-phone-contact-alpha-nav-item", data-query="R") R
+            div(class="chat-phone-contact-alpha-nav-item", data-query="S") S
+            div(class="chat-phone-contact-alpha-nav-item", data-query="T") T
+            div(class="chat-phone-contact-alpha-nav-item", data-query="U") U
+            div(class="chat-phone-contact-alpha-nav-item", data-query="V") V
+            div(class="chat-phone-contact-alpha-nav-item", data-query="W") W
+            div(class="chat-phone-contact-alpha-nav-item", data-query="X") X
+            div(class="chat-phone-contact-alpha-nav-item", data-query="Y") Y
+            div(class="chat-phone-contact-alpha-nav-item", data-query="Z") Z
+
+        div#chatPhoneContactSelectionListCollection(class="collection chat-phone-contact-selection-list")
+            a(href="#!", class="collection-item chat-phone-contact-alphabetical-list-item chat-phone-contact-alphabetical-list-item-to-clone hide")
+                span(class="chat-phone-contact-alphabetical-text") #
+            
+            //- a(href="#!", class="collection-item avatar chat-phone-contact-selection-list-item chat-phone-contact-selection-list-item-to-clone hide")
+            a(href="#!", class="collection-item chat-phone-contact-selection-list-item chat-phone-contact-selection-list-item-to-clone hide")
+                //- img(src="images/logo-100px-v1-background-full.png", alt="", class="circle")
+                span(class="chat-phone-contact-name")
+                div(class="chat-contact-phone-type")
+                div(class="chat-contact-identification")
+
+
+script(src="js/i_modal_new_contact.js")

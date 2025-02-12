@@ -1,0 +1,164 @@
+extends i_layout
+
+block main_variables
+    - var screen_type = 'system'
+
+block content
+    include i_customarea
+    
+    if useInternalSplashScreen != null
+        if useInternalSplashScreen == "1"
+            include i_splashscreen
+    
+    include i_modal_take_photo
+    include i_chat
+    include i_modal_message_search
+    include i_modal_contact_selection
+    include i_modal_new_contact
+    include i_modal_create_contact
+    include i_modal_create_group
+    include i_modal_group_member_edit
+    include i_modal_profile_edit
+    include i_modal_company
+    include i_modal_add_company_member
+    include i_modal_mode_to_add_company_member
+    include i_modal_version_news
+    
+    div#chatInternalNotificationList(class="internal-notification-list collection hide")
+
+    div#appChatContacts(class="app-chat-contacts")
+        //- App Header
+        div(class="app-chat-contacts-header")
+            div(class="app-chat-contacts-header-actions")
+                a(href="#", class="btn-flat app-chat-contacts-header-action-button left", data-target="appMenuList" class="sidenav-trigger")
+                    i(class="material-icons") more_vert
+
+                a#btnEnableNotification(href="#", class="btn-flat  app-chat-contacts-header-action-button app-chat-contacts-header-action-button-with-text-below hide")
+                    i(class="fa-solid fa-bell left")
+                    span(data-lang="enable-notification") Enable Notification
+
+                a#btnUnstableConnection(href="#", class="btn-flat app-chat-contacts-header-action-button hide")
+                    i(class="material-icons animate__animated animate__flash animate__infinite animate__slow red-text") wifi_off
+
+                a#btnConnectionSpeed(href="#", class="btn-flat app-chat-contacts-header-action-button hide", style="text-align: center;")
+                    i#btnConnectionSpeedIconSignal0(class="button-connection-speed-signal-icon material-icons hide") signal_wifi_statusbar_null
+                    i#btnConnectionSpeedIconSignal1(class="button-connection-speed-signal-icon material-icons hide") network_wifi_1_bar
+                    i#btnConnectionSpeedIconSignal2(class="button-connection-speed-signal-icon material-icons hide") network_wifi_2_bar
+                    i#btnConnectionSpeedIconSignal3(class="button-connection-speed-signal-icon material-icons hide") network_wifi_3_bar
+                    i#btnConnectionSpeedIconSignal4(class="button-connection-speed-signal-icon material-icons hide") signal_wifi_4_bar
+                    
+                    span(class="very-tiny-btn-text") 0 Mbps
+
+                a#btnChatContactAddNew(href="#", class="btn-flat app-chat-contacts-header-action-button app-chat-contacts-header-action-button-highlight")
+                    i(class="material-icons") add_circle
+
+            div(class="app-chat-contacts-header-chats")
+                div(class="app-chat-contacts-avatar")
+                    a#btnAppChatContactAvatar(class="app-chat-contacts-avatar-link", href="#")
+                        img#imgLoggedInUserProfile(src="images/contact.png", class="app-chat-contacts-avatar-image")
+                img#imgLoggedInCompanyLogo(src="images/generic-image.png", class="app-chat-home-company-logo hide")
+                div#homeContactSearchBox(class="app-chat-contacts-search")
+                    i(class="material-icons input-prefix") search
+                    input#txtAppChatContactSearch(type="search", class="app-chat-contacts-search-input", data-langplaceholder="search-dots", placeholder="Search...")
+                    a(href="#", class="search-clear-button", data-input="#txtAppChatContactSearch")
+                        i(class="fa-solid fa-circle-xmark")
+
+        //- Side Menu
+        ul#appMenuList(class="sidenav app-menu-list")
+            li
+                a#btnAppMenuClose(href="#", class="btn-float")
+                    i(class="fa-solid fa-arrow-left")
+                    span(data-lang="back") Back
+            li
+                include i_theme_switch
+            li
+                div(class="center")
+                    a#btnImgLoggedInProfileImage(href="#")
+                        img#imgLoggedInUserMenuProfile(src="images/contact.png", class="app-menu-profile-view-image")
+                    div#LoggedInUserMenuName(class="app-menu-profile-view-name")
+
+                    div(class="menu-login-exp-title", data-lang="login-valid-until") Login valid until
+                    div#menuLoginExpireDate(class="menu-login-exp-value")
+
+                    a#btnLoggedInUserMenuProfileEdit(href="#", class="btn-flat")
+                        span(data-lang="edit") Edit
+            li
+                select#selectDefinedCountry(class="browser-default")
+            li
+                div(class="divider")
+            li
+                a#btnAppMenuConnectionQR(href="#")
+                    i(class="material-icons") qr_code_scanner
+                    span(data-lang="display-connection-code") Display Connection Code
+
+            li#appMenuSwitchConnection(class="hide")
+                a#btnAppMenuSwitchConnection(href="#")
+                    i(class="material-icons") published_with_changes
+                    span(data-lang="switch-connection") Switch Connection
+            li
+                a#btnAppMenuSignout(href="#")
+                    i(class="fa-solid fa-right-from-bracket")
+                    span(data-lang="signout") Sign out
+
+            li
+                div(class="divider")
+            li
+                a#btnAppMenuRemoveAccount(href="#", class="remove-account-menu-item")
+                    i(class="fa-solid fa-circle-minus")
+                    span(data-lang="remove-account-menu-item") Remove Account
+            li(class="hide")
+
+                label
+                    input#chkDebugMode(type="checkbox" class="filled-in")
+                    span Debug Mode
+                a#btnDebugModeCopy(href="#", class="right-align hide") Copy
+                textarea#txtDebugModeText(name="txtDebugModeText", readonly="readonly", class="hide")
+
+            li(class="app-menu-footer-items")
+                div(class="app-menu-footer-version-number")=version
+
+
+        //- App Body
+        div(class="app-chat-contacts-body")
+
+            //- Backup restore home message area
+            div#appBackupRestoredMessage(class="app-backup-restore-message-area hide")
+                div(class="app-chat-contacts-body-title") 
+                    i(class="fa-solid fa-cloud-arrow-down screen-note-text")
+                    span(class="screen-note-text", data-lang="backup-restored") Backup Restored
+                div(class="card")
+                    div(class="card-content app-backup-restore-message-area-content center")
+                        div(class="app-backup-restore-message-text-style") 
+                            //- i(class="fa-solid fa-cloud-arrow-down")
+                            i(class="fa-solid fa-triangle-exclamation")
+                            span(data-lang="app-backup-restore-message-text") A backup has been restored to your device. Please confirm that the restoration was successful.
+                        div(class="app-backup-restore-message-text-style") 
+                            span(data-lang="app-backup-restore-new-backup-message-text") New backups will only be saved after this confirmation.
+                        a#btnAppBackupRestoreMessageNo(href="#!", class="btn-small app-backup-restore-message-no-button")
+                            i(class="fa-solid fa-xmark left")
+                            span(data-lang="app-backup-restore-message-no-button") No, it seems invalid
+                        a#btnAppBackupRestoreMessageOK(href="#!", class="btn-small app-backup-restore-message-ok-button")
+                            i(class="fa-solid fa-check left")
+                            span(data-lang="app-backup-restore-message-ok-button") Yes, everything seems ok
+
+            //- Chat list home area
+            div#chatContactListTitle(class="app-chat-contacts-body-title")
+                span(data-lang="chats", class="screen-note-text") Chats
+           
+            ul#chatContactListCollection(class="app-chat-contact-list collection")
+
+    div(class="app-screen-footer")
+        div(class="row no-margin")
+            div(class="col s4 center")
+                a#btnFooterMenuProfile(href="#", class="btn-flat")
+                    i(class="fa-solid fa-user")
+                    span(data-lang="profile") Profile
+            div(class="col s4 center")
+                a#btnFooterMenuAdd(href="#", class="btn-flat main-screen-footer-button")
+                    i(class="fa-solid fa-square-plus")
+            div(class="col s4 center")
+                a#btnFooterMenuCorporate(href="#", class="btn-flat")
+                    i(class="fa-solid fa-user-tie")
+                    span(data-lang="business") Business
+
+    script(src="js/index.js")

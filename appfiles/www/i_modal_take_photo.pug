@@ -1,0 +1,22 @@
+div#modalTakePhoto(class="modal bottom-sheet")
+    div(class="modal-content")
+        a#btnCloseModalTakePhoto(href="#!", class="close-buton-float-right default-modal-close-button waves-effect waves-light btn-flat")
+            i(class="fa-solid fa-xmark left")
+            //- span(data-lang="text-close") Close
+
+        div(class="row")
+            div(class="col s4")
+                a#btnTakeImageFromPhotoLibrary(href="#!")
+                    div(class="card card-take-photo")
+                        div(class="card-content")
+                            i(class="fa-solid fa-images", class="card-take-photo-icon")
+                            div(class="card-take-photo-title", data-lang="photos") Photos
+
+            div(class="col s4")
+                a#btnTakeImageFromCamera(href="#!")
+                    div(class="card card-take-photo")
+                        div(class="card-content")
+                            i(class="fa-solid fa-camera", class="card-take-photo-icon")
+                            div(class="card-take-photo-title", data-lang="camera") Camera
+
+script(src="js/i_modal_take_photo.js")

@@ -1,0 +1,847 @@
+/* NO COLOR ITEMS */
+
+html,
+body{
+    /* height: 100%; */
+    height: 100vh;
+}
+
+.btn, .btn-flat, .btn-large, .btn-small{
+    font-size: 11pt;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 8px;
+    vertical-align: middle;
+    text-transform: none;
+    letter-spacing: .2px;
+}
+
+.modal-footer{
+    background-color: transparent !important;
+}
+
+.collection a.collection-item span,
+.collection a.collection-item i {
+    vertical-align: middle;
+}
+
+.collection a.collection-item i {
+    padding: 0 10px;
+}
+
+.no-margin{
+    margin: 0 !important;
+}
+
+.body-app{
+
+}
+
+.body-ios{
+    /* margin-top: 52px; */
+    padding-top: 52px;
+}
+
+.body-android{
+    
+}
+
+.mt10{
+    margin-top: 10px;
+}
+
+.mb10{
+    margin-bottom: 10px;
+}
+
+/* MATERIALIZE hiddendiv FOR textarea */
+.hiddendiv{
+    width: 0px !important;
+}
+
+.app-loading-data-base-text{
+    font-size: 10pt;
+    text-align: center;    
+}
+
+.app-loading-data-status-text{
+    font-size: 8pt;
+    text-align: center;
+}
+
+.app-screen-footer{
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.body-ios .app-screen-footer{
+    bottom: 0px !important;
+    height: 80px;
+}
+
+.app-screen-footer a{
+    text-transform: none;
+    font-size: 8pt;
+    line-height: 28px;
+    height: 100%;
+}
+
+.app-screen-footer a i{
+    display: block;
+    padding-top: 5px;
+}
+
+.main-screen-footer-button{
+    line-height: 52px !important;
+    height: 100% !important;
+}
+
+.main-screen-footer-button i{
+    font-size: 22pt;
+    padding-top: 0 !important;
+}
+
+.y-scroll-element{
+    overflow-y: auto;
+    overflow-x:hidden;
+    cursor: grab;
+    scrollbar-width: 0;
+}
+
+.y-scroll-element::-webkit-scrollbar { 
+    display: none; /* For Chrome, Safari and Opera */
+}
+
+.card-content{
+    padding: 10px;
+}
+
+.close-buton-float-right{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.close-buton-media-float-right{
+    position: absolute;
+    right: -10px;
+    top: -40px;
+}
+
+.default-modal-close-button i{
+    margin-right: 5px;
+}
+
+.card-take-photo{
+    height: 85px;
+}
+
+.card-take-photo .card-content{
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.card-group-photo{
+    border-radius: 2px;
+}
+
+.card-take-photo-icon{
+    font-size: 24pt;
+    margin-bottom: 7px;
+}
+
+.card-take-photo-title{
+    font-size: 8pt;
+}
+
+.screen-big-icon-center{
+    width: 80px;
+    height: auto;
+}
+
+.screen-big-app-name-center{
+    font-size: 22pt;
+    /* font-weight: 600; */
+}
+
+.error-message-icon{
+    text-align: middle;
+    font-size: 12pt;
+    margin-right: 5px;
+}
+
+.error-message-text{
+    text-align: middle;
+    font-size: 10pt;
+}
+
+.loading-message-text{
+    text-align: middle;
+    font-size: 10pt;
+}
+
+.loading-animation-in-swal-image{
+    width: 64px;
+    height: auto;
+}
+
+.loading-animation-icon{
+    width: 32px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.signup-header-top-space,
+.reset-psw-header-top-space{
+    margin-top: 30px;
+}
+
+.signup-icon-top-space,
+.reset-psw-icon-top-space{
+    margin-top: 60px;
+}
+
+.signup-card,
+.reset-psw-card{
+    width: 90%;
+    margin: 0 auto !important;
+    border-radius: 2px;
+}
+
+.signup-button-area,
+.reset-psw-button-area{
+    margin-top: 35px;
+}
+
+.signup-selected-dial-code{
+    font-size: 12pt;
+    letter-spacing: 1.5px;
+    height: 36px;
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    vertical-align: middle;
+    line-height: 2.3;
+    margin: 0 0 4px 0;
+    position: relative;
+    left: 5px;
+    padding-left: 5px;
+}
+
+.signup-connection-settings-button-area{
+    margin-top: 40px;
+    text-align: right;
+}
+
+.signup-connection-settings-button-area a{
+    text-transform: none;
+}
+
+.signup-connection-settings-button-connection-logo{
+    width: 26px;
+    height: 26px;
+    vertical-align: top;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    opacity: .7;
+}
+
+.create-contact-selected-dial-code{
+    font-size: 12pt;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    max-width: 36px;
+    height: 36px;
+    box-sizing: content-box;
+    vertical-align: middle;
+    line-height: 2.3;
+    margin: 0 0 4px 0;
+    position: relative;
+    left: 5px;
+    padding-left: 5px;
+}
+
+.btn-signup-phone-next{
+    min-width: 120px;
+}
+
+.modal-create-contact{
+    max-width: 310px;
+}
+
+.modal-create-contact .modal-content{
+    padding: 6px;
+}
+
+.modal-company-member{
+    max-width: 360px;
+}
+
+.modal-company-member .modal-content{
+    padding: 6px;
+}
+
+.signup-phone-number
+{
+    box-shadow: none !important;
+}
+
+.signup-phone-number,
+.create-contact-phone-number{
+    width: 172px !important;
+    height: 36px !important;
+    font-size: 12pt !important;
+    margin-left: 0px !important;
+    padding-left: 14px !important;
+    border-bottom: none !important;
+    letter-spacing: 1.5px;
+    box-shadow: none !important;
+}
+
+.signup-phone-number::placeholder,
+.create-contact-phone-number::placeholder {
+    font-family: monospace, courier;
+    font-size: 12pt;
+}
+
+.signup-profile-name{
+    width: 230px !important;
+    border-radius: 2px !important;
+    font-size: 14pt !important;
+    text-align: center;
+    /* border-bottom: none !important; */
+}
+
+.signup-slide,
+.reset-psw-slide{
+    display: none;
+    padding: 0 10px;
+}
+
+.signup-profile-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: #ededed;
+    object-fit: cover;
+}
+
+.signup-password,
+.reset-password{
+    text-align: center;
+    font-size: 30pt !important;
+    width: 240px !important;
+    height: 48px !important;
+    letter-spacing: 14px;
+    font-family: monospace;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+}
+
+.phone-validation-code,
+.reset-password-code{
+    text-align: center;
+    font-size: 30pt !important;
+    width: 240px !important;
+    height: 48px !important;
+    letter-spacing: 14px;
+    font-family: monospace;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+}
+
+.sel-dial-code{
+    width: 227px;
+    margin-left: 5px !important;
+    display: inline-block !important;
+    vertical-align: middle;
+    font-size: 12pt !important;
+    padding: 0;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.screen-splash{
+    border: none;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.screen-splash-logo{
+    display: none; /* Display none waiting for fadeIn call */
+    width: 45%;
+    max-width: 500px;
+    height: auto;
+    position:absolute;
+    top:-28px;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+.screen-splash-version-text{
+    font-size: 10pt;
+}
+
+.screen-note-text{
+    font-size: 12pt;
+}
+
+.start-chat-collection-item{
+    padding-top: 100px !important;
+}
+
+.start-chat-button{
+    width: 200px;
+    border-radius: 30px;
+}
+
+.internal-notification-list{
+    position: fixed;
+    top: 4px;
+    left: 3px;
+    z-index: 100000;
+    width: calc(100% - 6px);
+    margin: 0;
+}
+
+.internal-notification-item{
+    padding: 5px !important;
+}
+
+.internal-notification-photo{
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.internal-notification-title{
+    vertical-align: middle;
+    font-size: 12pt;
+}
+
+.internal-notification-text{
+    font-size: 10pt;
+    padding-left: 42px;
+}
+
+.contact-list-unread-counter{
+    position: relative;
+    top: -10px;
+    right: calc(100% - 20px);
+    font-size: 10pt;
+    padding: 2px 9px;
+    border-radius: 15px;
+    float: right;
+}
+
+.sidenav li > .theme-switch{
+    width: 80px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.sidenav li > select{
+    margin: 10px 0px;
+    border: none;
+}
+
+.search-clear-button{
+    position: relative;
+    top: 10px;
+    right: 45px;
+    font-size: 14pt;
+    display: none;
+}
+
+.profile-edit-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: #ededed;
+    object-fit: cover;
+}
+
+.profile-edit-name{
+    width: 280px !important;
+    text-align: center;
+}
+
+.profile-edit-image-label{
+    width: 100px;
+    border-radius: 60px;
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+}
+
+.body-ios .app-menu-list{
+    padding-top: 52px;
+}
+
+.modal-contact-selection{
+    min-height: calc(99% - 50px);
+}
+
+.body-ios .modal-contact-selection{
+    min-height: calc(99% - 100px);
+}
+
+.modal-contact-selection .modal-content{
+    padding: 6px;    
+}
+
+.modal-create-group{
+    min-height: calc(99% - 50px);
+}
+
+.body-ios .modal-create-group{
+    min-height: calc(99% - 100px);
+}
+
+.group-members .card-content{
+    padding: 12px;
+}
+
+.group-members-icon{
+    vertical-align: middle;
+    margin-right: 12px;
+    font-size: 16pt;
+}
+
+.group-members-item-title{
+    vertical-align: middle;
+}
+
+.contact-selection-checkboxarea{
+    position: absolute;
+    left: 10px;
+    top: 21px;
+}
+
+.contact-selection-photo{
+    position: absolute;
+    left: 47px;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.contact-selection-name,
+.chat-contact-identification{
+    margin-left: 20px;
+}
+
+.btn-create-group-add-members{
+    width: 100%;
+    display: inline-block;
+}
+
+.contact-selection-added-header{
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.contact-selection-added-item{
+    display: inline-block;
+}
+
+.contact-selection-added-item-photo{
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.contact-selection-added-item-name{
+    font-size: 8pt;
+    text-align: center;
+}
+
+.create-group-member-photo{
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.create-group-member-admin-icon{
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.create-group-member-name{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.create-group-member-indicator-no-message-permission,
+.create-group-member-indicator-admin{
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.group-edit-image-label{
+    width: 100px;
+    border-radius: 60px;
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+}
+
+.group-edit-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: #ededed;
+    object-fit: cover;
+}
+
+.remove-account-menu-item{
+    margin-top: 20px;
+}
+
+.button-loading-animation{
+    margin: 0 3px;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+}
+
+.contact-list-status-home{
+    text-align: center;
+    font-size: 8pt;
+}
+
+.contact-list-home-percent{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.start-chat-home-phrase-area{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.start-chat-home-phrase-area span{
+    font-size: 9pt;
+    text-align: middle;
+}
+
+.start-chat-home-phrase-area i{
+    font-size: 12pt;
+    text-align: middle;
+    margin-right: 5px;
+}
+
+.only-device-message,
+.only-device-message i{
+    vertical-align: middle;
+}
+
+.only-device-message{
+    font-size: 10pt;
+}
+
+.only-device-message i{
+    font-size: 10pt;
+    margin-right: 5px;
+}
+
+.menu-login-exp-title{
+    font-weight: 600;
+}
+
+.menu-login-exp-title,
+.menu-login-exp-value{
+    line-height: 12px;
+    font-size: 7pt;
+}
+
+.app-menu-footer-items{
+    position: absolute;
+    bottom: 100px;
+    right: 10px;
+}
+
+.app-menu-footer-items div{
+    line-height: 12px;
+    font-size: 7pt;
+}
+
+.set-app-server-connection-input-check{
+    width: 280px !important;
+    height: 48px !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+}
+
+.set-app-server-connection-input-code{
+    font-size: 12pt !important;
+    text-align: center;
+    letter-spacing: 14px;
+    font-family: monospace;
+}
+
+.set-app-server-connection-input-company-id{
+    font-size: 11pt !important;
+}
+
+.set-app-server-connection-title{
+    font-size: 12pt;
+    text-align: center;
+}
+
+.set-app-server-connection-subtitle{
+    font-size: 10pt;
+    text-align: center;
+}
+
+.modal-set-server{
+    min-height: calc(99% - 50px);
+}
+
+.body-ios .modal-set-server{
+    min-height: calc(99% - 100px);
+}
+
+.btn-flat-with-box {
+    /* Must be used together with btn-flat */
+}
+
+.qr-title-element{
+    text-align: center;
+    font-size: 14pt;
+    margin-bottom: 5px;
+}
+
+.qr-scan-aim{
+    /* display: none !important; */
+    position: fixed;
+    top: 20px;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+    margin: 50% auto;
+}
+
+.qr-scan-aim-image{
+    width: calc(100vw - 50px);
+    height: auto;
+    opacity: .3;
+}
+
+.mini-app-modal{
+    min-height: calc(99% - 50px);
+}
+
+.body-ios .mini-app-modal{
+    min-height: calc(99% - 100px);
+}
+
+
+.default-text-input,
+select{
+    border-radius: 2px !important;
+    font-size: 10.5pt !important;
+    padding: 0 0 0 0.62rem !important;
+    margin: 10px 0 18px 0 !important;
+    height: 36px !important;
+}
+
+.default-input-label{
+    font-size: 10pt;
+}
+
+.company-member-list-view-item-contact-info{
+    font-size: 10pt;
+
+}
+
+.company-member-list-view-item-contact-number{
+    font-size: 10pt;
+    /* float: right; */
+}
+
+.group-validity-msg{
+    font-size: 8pt ;
+}
+
+.app-backup-restore-message-text-style{
+    margin: 0 0 20px 0;
+}
+
+.app-backup-restore-message-text-style i{
+    font-size: 12pt;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.app-backup-restore-message-text-style span{
+    font-size: 9pt;
+    vertical-align: middle;
+}
+
+.app-backup-restore-message-ok-button,
+.app-backup-restore-message-no-button{
+    font-size: 9pt;
+}
+
+.app-backup-restore-message-ok-button{
+    margin-left: 5px;
+}
+
+.app-backup-restore-message-no-button{
+    margin-right: 5px;
+}
+
+.very-tiny-btn-text{
+    font-size: 7pt;
+    display: block;
+    text-align: center
+}
+
+.btn-leave-group,
+.btn-delete-group{
+    margin-left: 16px;
+}
+
+#btnConnectionSpeed{
+    text-align: center;
+    width: 80px;
+    padding: 0;
+}
+
+#messageStatusScreenModal{
+    max-height: 95%;
+}
+
+.hidden-group{
+    display: none !important;
+}
+
+.default-validate-field{
+    font-size: 8pt;
+}

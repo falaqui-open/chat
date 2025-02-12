@@ -1,0 +1,71 @@
+div#modalCompanyMember(class="modal modal-company-member")
+    div(class="modal-content")
+        div(class="row no-margin")
+            div(class="col s12 right-align")
+                a#btnCloseModalCompanyMember(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+
+            div#addMemberTitle(class="col s12")
+                div(class="chat-contact-list-collection-title center") 
+                    span(data-lang="add-new-company-member", class="screen-note-text") Add New Member
+
+            div#editMemberTitle(class="col s12")
+                div(class="chat-contact-list-collection-title center") 
+                    span(data-lang="edit-company-member", class="screen-note-text") Edit Member
+
+        div(class="row no-margin")
+            div(class="col s12")
+                span(class="default-input-label", data-lang="mobile-phone") Mobile Phone
+            div(class="col s12 center")
+                select#selCompanyMemberDialCode(class="browser-default sel-dial-code")
+        div(class="row no-margin")
+            div(class="col s12 create-contact-phone-number-wraper center")
+                div#companyMemberDialCodeValue(class="create-contact-selected-dial-code")
+                input#txtCompanyMemberPhoneNumber(type="tel", class="create-contact-phone-number")
+            div(class="col s12")
+                span#companyMemberInvalidMobilePhone(class="hide") 
+                    i(class="fa-solid fa-triangle-exclamation error-message-icon")
+                    span(class="error-message-text", data-lang="invalid-mobile-number") Invalid mobile number
+
+        //- div(class="row no-margin")
+            div(class="col s12")
+                span#txtCompanyMemberName
+
+        div(class="row")
+            div(class="col s12")
+                label
+                    input#chkCompanyMemberIsAdmin(type="checkbox")
+                    span(data-lang="administrator") Administrator
+        div(class="row")
+            div(class="col s12")
+                label
+                    input#chkCompanyMemberIsExternal(type="checkbox")
+                    span(data-lang="txt-external") External
+
+        div(class="row")
+            div(class="col s12")
+                span(class="default-input-label", data-lang="txt-companymember-company-name") Company Name
+                input#txtCompanyMemberCompanyName(type="text", class="default-text-input")
+            div(class="col s12")
+                span(class="default-input-label", data-lang="txt-position") Position
+                input#txtCompanyMemberPosition(type="text", class="default-text-input")
+            div(class="col s12")
+                span(class="default-input-label", data-lang="txt-departament") Department
+                input#txtCompanyMemberDepartment(type="text", class="default-text-input")
+
+        div(class="row")
+            div(class="col s6 left")
+                a#btnCompanyMemberDelete(class="btn-small waves-effect waves-light delete-button hide")
+                    i(class="fa-solid fa-trash left")
+                    span(data-lang="delete") Delete
+            div#divCompanyMemberSave(class="col s6 center")
+                a#btnCompanyMemberSave(class="btn-small waves-effect waves-light disabled")
+                    i(class="fa-solid fa-check left")
+                    span(data-lang="save") Save
+            //-div(class="col s12 center")
+                div#companyMemberSaveOnlyDeviceMessage(class="only-device-message hide")
+                    i(class="fa-solid fa-triangle-exclamation")
+                    span(data-lang="use-your-smartphone-for-this-action") Use your smartphone for this action
+
+
+script(src="js/i_modal_add_company_member.js")

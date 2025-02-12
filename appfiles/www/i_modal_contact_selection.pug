@@ -1,0 +1,68 @@
+div#modalContactSelection(class="modal bottom-sheet modal-contact-selection")
+    div(class="modal-content")
+        div(class="contact-selection-header")
+            div(class="row no-margin")
+                div(class="col s12 right-align")
+                    a#btnCloseModalContactSelection(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                        i(class="fa-solid fa-xmark left")
+
+                div(class="col s12")
+                    div(class="contact-selection-list-collection-title center") 
+                        span(data-lang="add-members", class="screen-note-text") Add Members
+
+            div#contactSelectionAddedHeader(class="contact-selection-added-header")
+                div(class="contact-selection-added-item contact-selection-added-item-to-clone hide")
+                    img(src="images/logo-100px-v1-background-full.png", alt="", class="contact-selection-added-item-photo", onerror="this.onerror=null;this.src='images/contact.png'")
+                    div(class="contact-selection-added-item-name") ...
+            div(class="center")
+                a#btnContactSelectionAddContactList(href="#!", class="btn-small hide")
+                    span(data-lang="add") Add
+
+            div(class="app-chat-contacts-search")
+                i(class="material-icons input-prefix") search
+                input#txtContactSelectionSearch(type="search", class="app-chat-phone-contact-search-input", data-langplaceholder="search-dots", placeholder="Search...")
+                a(href="#", class="search-clear-button", data-input="#txtContactSelectionSearch")
+                    i(class="fa-solid fa-circle-xmark")
+
+        div#contactSelectionAlphaNav(class="contact-selection-alpha-nav")
+            div(class="contact-selection-alpha-nav-item", data-query="#") #
+            div(class="contact-selection-alpha-nav-item", data-query="A") A
+            div(class="contact-selection-alpha-nav-item", data-query="B") B
+            div(class="contact-selection-alpha-nav-item", data-query="C") C
+            div(class="contact-selection-alpha-nav-item", data-query="D") D
+            div(class="contact-selection-alpha-nav-item", data-query="E") E
+            div(class="contact-selection-alpha-nav-item", data-query="F") F
+            div(class="contact-selection-alpha-nav-item", data-query="G") G
+            div(class="contact-selection-alpha-nav-item", data-query="H") H
+            div(class="contact-selection-alpha-nav-item", data-query="I") I
+            div(class="contact-selection-alpha-nav-item", data-query="J") J
+            div(class="contact-selection-alpha-nav-item", data-query="K") K
+            div(class="contact-selection-alpha-nav-item", data-query="L") L
+            div(class="contact-selection-alpha-nav-item", data-query="M") M
+            div(class="contact-selection-alpha-nav-item", data-query="N") N
+            div(class="contact-selection-alpha-nav-item", data-query="O") O
+            div(class="contact-selection-alpha-nav-item", data-query="P") P
+            div(class="contact-selection-alpha-nav-item", data-query="Q") Q
+            div(class="contact-selection-alpha-nav-item", data-query="R") R
+            div(class="contact-selection-alpha-nav-item", data-query="S") S
+            div(class="contact-selection-alpha-nav-item", data-query="T") T
+            div(class="contact-selection-alpha-nav-item", data-query="U") U
+            div(class="contact-selection-alpha-nav-item", data-query="V") V
+            div(class="contact-selection-alpha-nav-item", data-query="W") W
+            div(class="contact-selection-alpha-nav-item", data-query="X") X
+            div(class="contact-selection-alpha-nav-item", data-query="Y") Y
+            div(class="contact-selection-alpha-nav-item", data-query="Z") Z
+
+        div#contactSelectionListCollection(class="collection contact-selection-list")
+            a(href="#!", class="collection-item contact-alphabetical-list-item contact-alphabetical-list-item-to-clone hide")
+                span(class="contact-alphabetical-text") #
+            a(href="#!", class="collection-item avatar contact-selection-list-item contact-selection-list-item-to-clone hide")
+                label(class="contact-selection-checkboxarea")
+                    input(type="checkbox", class="filled-in contact-selection-checkbox")
+                    span
+                //- img(src="images/logo-100px-v1-background-full.png", alt="", class="contact-selection-photo", onerror="this.onerror=null;this.src='images/contact.png'")
+                span(class="contact-selection-name")
+                div(class="chat-contact-identification")
+
+
+script(src="js/i_modal_contact_selection.js")

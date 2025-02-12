@@ -1,0 +1,31 @@
+div#modalProfileEdit(class="modal bottom-sheet modal-profile-edit")
+    div(class="modal-content")
+        div(class="row no-margin")
+            div(class="col s12 right-align")
+                a#btnCloseModalProfileEdit(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+
+        div(class="row")
+            div(class="col s12 center")
+                a#profileEditUserProfileChangePhotoRequest(href="#")
+                    div(class="profile-edit-image-label")
+                        span(data-lang="change-photo") Change Photo
+                    img#imgProfileEditPhoto(class="profile-edit-image", src="images/add-photo-padding.png")
+            div(class="col s12 center")
+                a#profileEditUserProfileClearPhoto(href="#", class="btn-flat")
+                    i(class="fa-solid fa-xmark left")
+                    span(data-lang="remove-photo") Remove Photo
+        div(class="row")
+            div(class="col s12 center")
+                input#txtProfileEditName(type="text", class="profile-edit-name default-text-input", maxlength="50", placeholder="Type your name here", data-langplaceholder="type-your-name-here")
+
+            div(class="col s12 center")
+                span#profileEditUserProfileOfflineConnection(class="hide") 
+                    i(class="material-icons error-message-icon") wifi_off
+                    span(class="error-message-text", data-lang="offline-connection") No internet connection. Make sure that Wi-Fi or mobile data is turned on, then try again.
+
+        div(class="row")
+            div(class="col s12 center")
+                a#btnProfileEditSave(href="#", class="btn-small")
+                    span(data-lang="save") Save
+script(src="js/i_modal_profile_edit.js")

@@ -1,0 +1,68 @@
+div#modalGroupMemberEdit(class="modal bottom-sheet")
+    div(class="modal-content")
+        div(class="row")
+            div(class="col s12 center")
+                a#btnCloseModalGroupMemberEdit(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+                    span(data-lang="text-close") Close
+
+        div(class="row")
+            div(class="col s12")
+                span#groupMemberEditContactName
+
+        div(class="row")
+            div(class="col s12")
+                label
+                    input#chkGroupMemberEditMessagePermission(type="checkbox")
+                    span(data-lang="allow-to-send-message") Allow to send message
+
+            div(class="col s12")
+                label
+                    input#chkGroupMemberEditIsAdmin(type="checkbox")
+                    span(data-lang="administrator") Administrator
+
+        div(class="row")
+            div(class="col s12 center")
+                a#btnGroupMemberRemoveFromGroup(href="#", class="btn-flat red-text")
+                    i(class="fa-solid fa-circle-minus left")
+                    span(data-lang="remove-from-group") Remove from Group
+
+        div(class="card")
+            div(class="card-content")
+                label
+                    input#chkUseGroupUserValidity(type="checkbox", class="filled-in")
+                    span(data-lang="group-user-validity") User Validity
+
+                div(class="right")
+                    a#btnUserValiditySave(class="btn  waves-effect waves-light disabled")
+                        span#txtBtnUserValiditySave(data-lang="save-user-validity") Save User Validity
+
+                div#userGroupValidityFields(class="hide")
+                    //- Validity From a Date
+                    div
+                        label
+                            input(name="usergroupvalidityperiod", type="radio", value="usergroupvalidityperiodfromdate")
+                            span(data-lang="from-date") From Date
+
+                        div#userGroupValidityPeriodFromDateFields(class="card hide")
+                            div(class="card-content")
+                                input#txtUserGroupValidityPeriodFromDate(type="text", class="datepicker default-text-input")
+                            //-input(name="usergroupvalidityperiod", type="radio", value="usergroupvalidityperiodfromdate")
+
+                    //- Validity Between 2 Dates
+                    div
+                        label
+                            input(name="usergroupvalidityperiod", type="radio", value="usergroupvalidityperiodbetweendate")
+                            span(data-lang="between-date") Between Date
+
+                        div(class="card")
+                            div#userGroupValidityPeriodBetweenDateFields(class="card-content hide")
+                                div
+                                    span(data-lang="start-date") Start Date
+                                    input#txtUserGroupValidityPeriodBetweenDateStart(type="text", class="datepicker default-text-input")
+                                div
+                                    span(data-lang="end-date") End Date
+                                    input#txtUserGroupValidityPeriodBetweenDateEnd(type="text", class="datepicker default-text-input")
+
+
+script(src="js/i_modal_group_member_edit.js")

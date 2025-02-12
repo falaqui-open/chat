@@ -1,0 +1,23 @@
+div#modalVersionNews(class="modal bottom-sheet modal-fixed-footer")
+    div(class="modal-content")
+
+        div#header(class="row")
+            div(class="col s12")
+                div(class="col s12 star center")
+                    img(src="images/star.png" height="80px")
+                div(class="col s12 title center fw-bold")
+                    span(data-lang="what-news-release") What’s new is this release
+                div(class="col s12 subtitle center")
+                    span(data-lang="version") Version
+                    span#versionNumber
+
+        div#versionNewsList(class="row")
+            
+
+    div(class="modal-footer")
+        div#versionNewsAction(class="row")
+            div(class="col s12 center")
+                a#versionNewsClose(class="btn-small")
+                    span(data-lang="got-it") Got It 
+
+script(src="js/i_modal_version_news.js")

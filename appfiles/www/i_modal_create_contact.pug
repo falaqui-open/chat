@@ -1,0 +1,42 @@
+div#modalCreateContact(class="modal modal-create-contact")
+    div(class="modal-content")
+        div(class="row no-margin")
+            div(class="col s12 right-align")
+                a#btnCloseModalCreateContact(href="#!", class="default-modal-close-button waves-effect waves-light btn-flat")
+                    i(class="fa-solid fa-xmark left")
+
+            div(class="col s12")
+                div(class="chat-contact-list-collection-title center") 
+                    span(data-lang="add-new-contact", class="screen-note-text") Add New Contact
+
+        div(class="row")
+            div(class="col s12")
+                span(data-lang="name", class="default-input-label") Name
+            div(class="col s12")
+                input#txtCreateContactName(type="text", maxlength="50", class="default-text-input")
+
+        div(class="row")
+            div(class="col s12")
+                span(data-lang="mobile-phone", class="default-input-label") Mobile Phone
+            div(class="col s12 center")
+                select#selCreateContactDialCode(class="browser-default sel-dial-code")
+            div(class="col s12 create-contact-phone-number-wraper center")
+                div#createContactDialCodeValue(class="create-contact-selected-dial-code")
+                input#txtCreateContactPhoneNumber(type="tel", class="create-contact-phone-number")
+            div(class="col s12")
+                span#createContactInvalidMobilePhone(class="hide") 
+                    i(class="fa-solid fa-triangle-exclamation error-message-icon")
+                    span(class="error-message-text", data-lang="invalid-mobile-number") Invalid mobile number
+
+        div(class="row")
+            div(class="col s12 center")
+                a#btnCreateContactSave(class="btn  waves-effect waves-light disabled")
+                    span(data-lang="save") Save
+        div(class="row")
+            div(class="col s12 center")
+                div#createContactSaveOnlyDeviceMessage(class="only-device-message hide")
+                    i(class="fa-solid fa-triangle-exclamation")
+                    span(data-lang="use-your-smartphone-for-this-action") Use your smartphone for this action
+
+
+script(src="js/i_modal_create_contact.js")

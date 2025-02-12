@@ -1,0 +1,9 @@
+div#screenSplash(class="screen-splash")
+    //- img(src="images/screen-splash-logo.png", class="screen-splash-logo animate__animated animate__pulse animate__infinite animate__fast")
+    img#screenSplashLogo(src="images/screen-splash-logo.png", class="screen-splash-logo")
+    //- img(src="images/screen-splash-logo-animated.png", class="screen-splash-logo animate__animated animate__flipInX animate__infinite animate__slower animate__delay-1s")
+
+    div(class="row")
+        div(class="col s12 center")
+            span#splashVersionNumber(class="screen-splash-version-text")=version
+script(src="js/i_splashscreen.js")

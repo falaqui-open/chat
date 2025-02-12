@@ -1,0 +1,358 @@
+.app-chat-contacts{
+
+}
+
+.app-chat-contacts-header{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+}
+
+.body-ios .app-chat-contacts-header{
+    top: 52px !important;
+}
+
+.app-chat-contacts-header-actions{
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+}
+
+.app-chat-contacts-header-chats{
+    padding: 5px;
+    display: flex;
+}
+
+.app-chat-contacts-header-action-button{
+    padding: 0 10px;
+}
+
+.app-chat-contacts-header-action-button i{
+    font-size: 20pt;
+    vertical-align: middle;
+}
+
+.app-chat-contacts-header-action-button span{
+    font-size: 7pt;
+    text-transform: none;
+    line-height: initial;
+}
+
+.app-chat-contacts-header-action-button-with-text-below i{
+    margin: 0;
+}
+
+.app-chat-contacts-header-action-button-with-text-below{
+    display: inline-grid;
+    text-align: center;
+}
+
+.app-chat-contacts-header-action-button-with-text-below span{
+    text-align: center;
+}
+
+.app-chat-contacts-body{
+    margin-top: 120px;
+    padding-bottom: 60px; /* Offset for fixed foooter menu */
+}
+
+.body-ios .app-chat-contacts-body{
+    padding-bottom: 80px; /* Offset for fixed foooter menu */
+}
+
+.app-chat-contacts-avatar{
+    width: 60px;
+    text-align: center;
+}
+
+.app-chat-contacts-search{
+    flex-grow: 1;
+    margin: 0;
+    display: flex;
+}
+
+.app-chat-contacts-search .input-prefix{
+    position: relative;
+    top: 14px;
+    left: 20px;
+    z-index: 1;
+}
+
+.app-chat-contacts-search-input,
+.app-chat-phone-contact-search-input,
+.app-chat-message-search-input{
+    position: relative;
+    left: -15px;
+    z-index: 0;
+    height: 36px !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    padding-left: 40px !important;
+    width: calc(100% - 46px) !important;
+    margin-top: 6px !important;
+    font-size: 10pt !important;
+}
+
+.app-chat-contacts-avatar-image{
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.app-chat-home-company-logo{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    border-radius: 12px;
+    position: relative;
+    top: 20px;
+    right: 5px;
+}
+
+.app-menu-profile-view-image{
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    border-radius: 170px;
+    object-fit: cover;
+}
+
+.app-menu-profile-view-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-chat-contacts-body-title{
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.app-chat-contacts-body-title i{
+    font-size: 14pt;
+    margin-right: 10px;
+}
+
+.app-chat-contact-list-item,
+.app-chat-group-list-item{
+    padding: 0px !important;
+}
+
+.app-chat-contact-list-item-link,
+.app-chat-group-list-item-link{
+    padding: 20px 8px;
+    width: 100%;
+    display: inline-block;
+}
+
+.app-chat-contact-list-item-avatar,
+.app-chat-group-list-item-avatar{
+    width: 40px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.app-chat-contact-list-item-avatar-image,
+.app-chat-group-list-item-avatar-image{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.app-chat-contact-list-item-info,
+.app-chat-group-list-item-info{
+    display: inline-block;
+}
+
+.app-chat-contact-list-item-name,
+.app-chat-group-list-item-name{
+    /* font-weight: 600; */
+    font-size: 11pt;
+}
+
+.app-chat-contact-list-item-recent-text,
+.app-chat-group-list-item-recent-text{
+    font-size: 9pt;
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-chat-contact-list-item-time,
+.app-chat-group-list-item-time{
+    font-size: 9pt;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+}
+
+.modal-new-contact{
+    min-height: calc(99% - 25px);
+}
+
+.modal-new-contact .modal-content{
+    padding: 0px;
+}
+
+.body-ios .modal-new-contact{
+    min-height: calc(99% - 100px);
+}
+
+.modal-message-search{
+    min-height: calc(99% - 50px);
+}
+
+.modal-message-search .modal-content{
+    padding: 0px;
+}
+
+.body-ios .modal-message-search{
+    min-height: calc(99% - 100px);
+}
+
+.modal-profile-edit{
+    min-height: calc(99% - 50px);
+}
+
+.modal-profile-edit .modal-content{
+    padding: 0px;
+}
+
+.body-ios .modal-profile-edit{
+    min-height: calc(99% - 100px);
+}
+
+.chat-phone-contact-header,
+.contact-selection-header{
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    padding-bottom: 15px;
+}
+
+.chat-phone-contact-selection-list,
+.contact-selection-list{
+    padding-right: 50px !important;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-selection-list-item,
+.contact-selection-list-item{
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-contact-list-collection-title,
+.contact-selection-list-collection-title{
+    margin-bottom: 15px;
+    font-size: 11pt;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-contact-phone-type{
+    border-radius: 4px;
+    font-size: 8pt;
+    padding: 0px 2px;
+    /* display: inline-block; */
+    line-height: 16px;
+    vertical-align: middle;
+    /* margin-left: 6px; */
+    float: right;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-name,
+.contact-selection-name{
+    font-size: 11pt;
+    /* font-weight: 600; */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-alphabetical-list-item,
+.contact-alphabetical-list-item{
+    border-right: none !important;
+    border-left: none !important;
+    font-size: 12pt;
+    scroll-margin-top: 110px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-alpha-nav,
+.contact-selection-alpha-nav{
+    height: 440px;
+    width: 50px;
+    z-index: 10 !important;
+    position: fixed;
+    top: calc(50% - 220px + 130px);
+    right: 0;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-alpha-nav-item,
+.contact-selection-alpha-nav-item{
+    font-size: 7.8pt;
+    text-align: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    -moz-user-select: none; /* Moz */
+    user-select: none; /* Standard syntax */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -ms-scroll-chaining: none; /* Prevents Metro from swiping to the next tab or app. */
+}
+
+.chat-phone-contact-alpha-nav-item-hover,
+.contact-selection-alpha-nav-item-hover{
+    transform: scale(1.5);
+}
+
+.new-contact-action-list{
+    padding: 2px 20px;
+}
