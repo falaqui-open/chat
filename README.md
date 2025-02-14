@@ -306,7 +306,13 @@ Example to build to the iOS platform (requires MacOS and XCode):
 ./setup-cordova-build.sh "falaqui" "FalaQui" "ios" "1.0.0"
 ```
 
-After running the build script, the app will be built in the app_build_CHOSEN_PLATFORM/APPNAME directory. Example of Cordova Project build: app_build_android/falaqui.
+Note: After running the iOS build script, the console may show some warnings and errors with label ** ARCHIVE FAILED **. You can ignore this error. This error occurs because the build process is made to create an archive file for the app store. The archive file is not necessary for the app store and the app can be built without it.
+
+### Check your Build
+After running the build script, the app will be built in the app_build_CHOSEN_PLATFORM/APPNAME directory. 
+
+- **Android Build Example**: app_build_android/falaqui.
+- **iOS Build Example**: app_build_ios/falaqui.
 
 ### Running the App
 
@@ -331,6 +337,20 @@ Is also possible to run the terminal command to run the app in the Android platf
 cd app_build_android/falaqui
 cordova run android
 ```
+
+### iOS Platform
+You need to use the XCode to run the app in the iOS platform. Open the XCode and select to open the xcworkspace file, example app_build_ios/falaqui/platforms/ios/FalaQui.xcworkspace. After the project is loaded, do the configuration below and you may run the app in a connected iOS device. This project uses plugins that is not compatible with the iOS Simulator. That is the recommended way to run the app in the iOS platform specially for debugging and testing to view the XCode logs.
+
+Configure the project after opening in XCode:
+- **Apple Developer Account**: You need to have an Apple Developer Account to build the app in the iOS platform.
+- **Provisioning Profile**: You need to have a provisioning profile to build the app in the iOS platform.
+- **iOS Device**: You need to have an iOS device to run the app in the iOS platform.
+- **Identity App Category**: You need to set the identity app category in General tab to build the app in the iOS platform. Eg.: Social Networking.
+- **Team**: You need to set the team in Signing & Capabilities tab to build the app in the iOS platform. Note: If you plan to publish the app in the App Store you need to check the Release option in the Signing & Capabilities tab and select a valid provisioning profile. Otherwise you may use the Debug option.
+
+Select Product > Build to build the app in the iOS platform and confirm the build process finish without errors.
+Run the app in a connected iOS device to view the app in the iOS platform.
+
 
 
 ## License

@@ -306,7 +306,13 @@ Exemplo para construir para a plataforma iOS (requer MacOS e XCode):
 ./setup-cordova-build.sh "falaqui" "FalaQui" "ios" "1.0.0"
 ```
 
-Após executar o script de construção, o aplicativo será construído no diretório app_build_CHOSEN_PLATFORM/APPNAME. Exemplo de construção de projeto Cordova: app_build_android/falaqui.
+Nota: Após executar o script de construção para iOS, o console pode exibir alguns avisos e erros com a label ** ARCHIVE FAILED **. Você pode ignorar esse erro. Esse erro ocorre porque o processo de construção é feito para criar um arquivo de archive para a loja de aplicativos. O arquivo de archive não é necessário para a loja de aplicativos, e o aplicativo pode ser construído sem ele.
+
+### Verifique sua Construção
+Após executar o script de construção, o aplicativo será construído no diretório app_build_CHOSEN_PLATFORM/APPNAME.
+
+- **Exemplo de Construção Android**: app_build_android/falaqui.
+- **Exemplo de Construção iOS**: app_build_ios/falaqui.
 
 ### Executando o Aplicativo
 
@@ -331,6 +337,20 @@ Também é possível executar o comando no terminal para executar o aplicativo n
 cd app_build_android/falaqui
 cordova run android
 ```
+
+### Plataforma iOS
+Você precisa usar o XCode para executar o aplicativo na plataforma iOS. Abra o XCode e selecione para abrir o arquivo xcworkspace, por exemplo, app_build_ios/falaqui/platforms/ios/FalaQui.xcworkspace. Após o projeto ser carregado, faça a configuração abaixo e você poderá executar o aplicativo em um dispositivo iOS conectado. Este projeto usa plugins que não são compatíveis com o iOS Simulator. Essa é a maneira recomendada para executar o aplicativo na plataforma iOS, especialmente para depuração e teste para visualizar os logs do XCode.
+
+Configure o projeto após abrir no XCode:
+- **Conta de Desenvolvedor Apple**: Você precisa ter uma Conta de Desenvolvedor Apple para construir o aplicativo na plataforma iOS.
+- **Perfil de Provisionamento**: Você precisa ter um perfil de provisionamento para construir o aplicativo na plataforma iOS.
+- **Dispositivo iOS**: Você precisa ter um dispositivo iOS para executar o aplicativo na plataforma iOS.
+- **Categoria do Aplicativo**: Você precisa definir a categoria do aplicativo na aba General para construir o aplicativo na plataforma iOS. Ex.: Social Networking.
+- **Team**: Você precisa definir o team na aba Signing & Capabilities para construir o aplicativo na plataforma iOS. Nota: Se você planeja publicar o aplicativo na App Store, você precisa marcar a opção Release na aba Signing & Capabilities e selecionar um perfil de provisionamento válido. Caso contrário, você pode usar a opção Debug.
+
+Selecione Product > Build para construir o aplicativo na plataforma iOS e confirme que o processo de construção termina sem erros.
+Execute o aplicativo em um dispositivo iOS conectado para visualizar o aplicativo na plataforma iOS.
+
 
 
 ## Licença
